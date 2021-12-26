@@ -6,7 +6,7 @@
       <label>Entreprise </label>
       <select formControlName="entreprise">
         <option [ngValue]="null" disabled>Choisissez l'enterprise</option>
-        <option *ngFor="let ent of this.entreprises" [ngValue]="ent">
+        <option *ngFor="let ent of this.entreprises" [ngValue]="ent.numEntreprise">
           {{ ent.raisonSociale }}
         </option>
       </select>
@@ -17,7 +17,7 @@
       <label>Etudiant </label>
       <select formControlName="etudiant">
         <option [ngValue]="null" disabled>Choisissez l'étudiant</option>
-        <option *ngFor="let etu of this.etudiants" [ngValue]="etu">
+        <option *ngFor="let etu of this.etudiants" [ngValue]="etu.numEtudiant">
           {{ etu.nomEtudiant }}
         </option>
       </select>
@@ -28,7 +28,7 @@
       <label>Professeur </label>
       <select formControlName="professeur">>
         <option [ngValue]="null" disabled>Choisissez le professeur</option>
-        <option *ngFor="let pro of this.professeurs" [ngValue]="pro">
+        <option *ngFor="let pro of this.professeurs" [ngValue]="pro.numProf">
           {{ pro.nomProf }}
         </option>
       </select>

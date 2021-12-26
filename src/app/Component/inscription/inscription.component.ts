@@ -10,6 +10,7 @@ import {Stage} from "../../Models/Stage";
 import {ProfesseurService} from "../../Services/ProfesseurService";
 import {EtudiantService} from "../../Services/EtudiantService";
 import {EntrepriseService} from "../../Services/EntrepriseService";
+import {StageService} from "../../Services/StageService";
 
 
 @Component({
@@ -37,7 +38,13 @@ export class InscriptionComponent implements OnInit {
 
   });
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private logInService: LogInService, private profService: ProfesseurService, private etudiantService: EtudiantService, private enterpriseService: EntrepriseService) {
+  constructor(private formBuilder: FormBuilder,
+              private router: Router,
+              private logInService: LogInService,
+              private profService: ProfesseurService,
+              private etudiantService: EtudiantService,
+              private enterpriseService: EntrepriseService,
+              private stageService: StageService) {
 
 
   }
@@ -79,13 +86,12 @@ export class InscriptionComponent implements OnInit {
       numEtudiant: this.loginForm.value.etudiant,
       numProf: this.loginForm.value.professeur,
       observationStage: this.loginForm.value.observation,
-      typeStage: this.loginForm.value.typeStage,
+      typeStage: this.loginForm.value.type,
       numStage: 0,
       numEntreprise: this.loginForm.value.entreprise,
     };
-
-    console.log(stage);
-
-
+    this.stageService.createStage(stage).subscribe();
   }
+
+
 }

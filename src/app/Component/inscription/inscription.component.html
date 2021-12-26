@@ -18,7 +18,7 @@
       <select formControlName="etudiant">
         <option [ngValue]="null" disabled>Choisissez l'étudiant</option>
         <option *ngFor="let etu of this.etudiants" [ngValue]="etu.numEtudiant">
-          {{ etu.nomEtudiant }}
+          {{ etu.nomEtudiant + ' ' + etu.prenomEtudiant }}
         </option>
       </select>
     </div>
@@ -29,7 +29,7 @@
       <select formControlName="professeur">>
         <option [ngValue]="null" disabled>Choisissez le professeur</option>
         <option *ngFor="let pro of this.professeurs" [ngValue]="pro.numProf">
-          {{ pro.nomProf }}
+          {{ pro.nomProf + ' ' + pro.prenomProf}}
         </option>
       </select>
     </div>

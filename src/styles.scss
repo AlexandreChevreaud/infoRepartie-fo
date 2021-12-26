@@ -209,3 +209,201 @@ article h2 {
   padding: 15px;
   text-align: center;
 }
+
+
+// FORMULAIRE
+fieldset {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+input, label, select, textarea {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 3px 6px 3px 6px;
+}
+
+input, select, textarea {
+  border: 1px solid #888;
+  border-radius: 2px;
+  min-width: 175px;
+  max-width: 100%;
+}
+
+input, select, textarea {
+  width: 100%;
+}
+
+input[type=submit], input[type=button] {
+  min-width: 0px;
+  width: 150px;
+}
+
+textarea {
+  min-height: 60px;
+}
+
+// BOUTON
+
+.large_bouton_operation a::before, .bouton_operation a, .fake_bouton {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  margin: -11px 2px -11px 2px;
+  content: " ";
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.icon_ajouter::before {
+  background-image: url(./assets/ajouter.png);
+}
+
+.icon_rechercher::before {
+  background-image: url(./assets/rechercher.png);
+}
+
+.icon_modifier {
+  background-image: url(./assets/modifier.png);
+}
+
+.icon_supprimer {
+  background-image: url(./assets/supprimer.png);
+}
+
+.icon_voir {
+  background-image: url(./assets/voir.png);
+}
+
+.icon_inscrire {
+  background-image: url(./assets/inscrire.png);
+}
+
+.icon_website {
+  background-image: url(./assets/lien.png);
+}
+
+input[type="submit"], input[type="button"], .large_bouton_operation a, .bouton_operation a, .fake_bouton {
+  background-color: #183080;
+  border: 1px solid #0A1840;
+  border-radius: 3px;
+  color: white;
+  padding: 8px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover, .large_bouton_operation a:hover, .bouton_operation a:hover, .fake_bouton:hover {
+  background-color: #3040A0;
+}
+
+.bouton_operation a, .fake_bouton {
+  margin: 0px;
+  margin-left: 2px;
+  margin-right: 2px;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+}
+
+.fake_bouton {
+  background-size: 20px 20px;
+  width: 18px;
+  height: 18px;
+  padding: 3px;
+  margin-top: -9px;
+  margin-bottom: -9px;
+}
+
+.large_bouton_operation a::before {
+  margin-right: 15px;
+}
+
+.large_bouton_operation a {
+  text-decoration: none;
+  margin: 0px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+.large_bouton_operation {
+  margin: 20px 2px 20px 2px;
+}
+
+// TABLEAU
+
+.list {
+  width: 100%;
+}
+
+.list table {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.list th, td {
+  margin: 0px;
+  border-radius: 3px;
+
+}
+
+.list th {
+  text-decoration: none;
+  background-color: #3060FF;
+  border: 1px solid #183080;
+  color: white;
+  margin: 0px;
+  padding: 5px 12px 5px 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.list th span {
+  display: inline-block;
+  width: -moz-calc(100% - 18px);
+  width: -webkit-calc(100% - 18px);
+  width: -o-calc(100% - 18px);
+  width: calc(100% - 18px);
+  text-align: center;
+
+}
+
+.list th a {
+  text-align: center;
+  text-decoration: none;
+  background-color: #2050C0;
+  border-radius: 3px;
+  color: white;
+  border: 1px solid #1840A0;
+  padding: 0px 4px 0px 4px;
+  margin: 4px 4px 4px 4px;
+}
+
+.list td {
+  background-color: #DDD;
+  border: 1px solid #BBB;
+  padding: 5px 5px 5px 5px;
+  font-size: 0.85em;
+}
+
+.list td ul {
+  padding: 0px 0px 0px 20px;
+  margin: 0px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+
+

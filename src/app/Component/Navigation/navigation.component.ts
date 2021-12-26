@@ -11,6 +11,8 @@ export class NavigationComponent implements OnInit {
 
   //TODO Ajouter les router quand les pages seront créées
 
+  //TODO développer et réduide 
+
   @Input()
   navigations: Navigations | undefined;
 

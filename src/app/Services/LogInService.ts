@@ -5,8 +5,10 @@ import {Injectable} from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-
 export class LogInService {
+
+  isConnected = false;
+  isProfesseur = false;
 
   urlEtudiant = "http://localhost:8080/etudiant";
   urlProf = "http://localhost:8080/prof";

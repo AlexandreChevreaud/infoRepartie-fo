@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Navigations} from "./Enums/Navigations";
+import {LogInService} from "./Services/LogInService";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ export class AppComponent implements OnInit {
   nav: Navigations = Navigations.Accueil;
 
 
-  constructor() {
+  constructor(private logInService: LogInService) {
   }
 
   ngOnInit(): void {

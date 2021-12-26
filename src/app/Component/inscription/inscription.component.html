@@ -4,7 +4,7 @@
     <!-- Entreprise  -->
     <div class="form-example">
       <label>Entreprise </label>
-      <select>
+      <select formControlName="entreprise">
         <option [ngValue]="null" disabled>Choisissez l'enterprise</option>
         <option *ngFor="let ent of this.entreprises" [ngValue]="ent">
           {{ ent.raisonSociale }}
@@ -15,7 +15,7 @@
     <!-- Etudiant  -->
     <div class="form-example">
       <label>Etudiant </label>
-      <select>
+      <select formControlName="etudiant">
         <option [ngValue]="null" disabled>Choisissez l'étudiant</option>
         <option *ngFor="let etu of this.etudiants" [ngValue]="etu">
           {{ etu.nomEtudiant }}
@@ -26,7 +26,7 @@
     <!-- professeur  -->
     <div class="form-example">
       <label>Professeur </label>
-      <select>
+      <select formControlName="professeur">>
         <option [ngValue]="null" disabled>Choisissez le professeur</option>
         <option *ngFor="let pro of this.professeurs" [ngValue]="pro">
           {{ pro.nomProf }}
@@ -41,20 +41,20 @@
     <!-- date début  -->
     <div class="form-example">
       <label>Date de début </label>
-      <input type="date" name="debut"/>
+      <input type="date" name="debut" formControlName="dateDebut"/>
     </div>
 
     <!-- date fin  -->
     <div class="form-example">
       <label>Date de début </label>
-      <input type="date" name="fin"/>
+      <input type="date" name="fin" formControlName="dateFin"/>
     </div>
 
 
     <!-- type de stage  -->
     <div class="form-example">
       <label>Type de stage </label>
-      <select>
+      <select formControlName="type">
         <option [ngValue]="null" disabled>Choisissez le type de stage</option>
         <option *ngFor="let typ of this.types" [ngValue]="typ">
           {{ typ }}
@@ -65,7 +65,7 @@
     <!-- description -->
     <div class="form-example">
       <label>Description du projet </label>
-      <textarea name="description">
+      <textarea name="description" formControlName="description">
 
       </textarea>
 
@@ -74,13 +74,13 @@
     <!-- observation -->
     <div class="form-example">
       <label>Observation </label>
-      <textarea name="observation">
+      <textarea name="observation" formControlName="observation">>
 
       </textarea>
 
     </div>
 
-    <input type="submit" value="Subscribe!">
+    <input type="submit" value="Créer le stage">
 
   </div>
 

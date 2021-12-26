@@ -6,6 +6,7 @@ import {TypeStage} from "../../Enums/TypeStage";
 import {Router} from "@angular/router";
 import {LogInService} from "../../Services/LogInService";
 import {FormBuilder} from "@angular/forms";
+import {Stage} from "../../Models/Stage";
 
 
 @Component({
@@ -20,6 +21,7 @@ export class InscriptionComponent implements OnInit {
   etudiants: Etudiant[] = [];
   professeurs: Professeur[] = [];
   types: string[] = [];
+
   loginForm = this.formBuilder.group({
     entreprise: '',
     etudiant: '',
@@ -56,6 +58,18 @@ export class InscriptionComponent implements OnInit {
 
 
   onSubmit() {
+    let stage: Stage = {
+      debutStage: this.loginForm.value.debutStage,
+      descProjet: this.loginForm.value.description,
+      finStage: this.loginForm.value.finStage,
+      numEtudiant: this.loginForm.value.etudiant,
+      numProf: this.loginForm.value.professeur,
+      observationStage: this.loginForm.value.observationStage,
+      typeStage: this.loginForm.value.typeStage,
+      numStage: 0,
+      numEntreprise: this.loginForm.value.entreprise,
+    };
+
 
   }
 }

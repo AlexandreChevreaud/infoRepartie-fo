@@ -1,10 +1,23 @@
 <nav>
   <a id="onglet_accueil"
-     [ngClass]="{'actif' : isAccueil()}">Accueil</a>
-  <a id="onglet_entreprise" routerLink="/entreprise">Entreprise</a>
-  <a id="onglet_stagiaire">Stagiaire</a>
-  <a id="onglet_inscrire">Inscription</a>
-  <a id="onglet_aide">Aide</a>
-  <a id="onglet_deconnection">Deconnexion</a>
+     routerLink="/accueil"
+     [ngClass]="{'actif' : isAccueil()}"
+     (click)="addNewItem(0)">Accueil</a>
+  <a id="onglet_entreprise"
+     [ngClass]="{'actif' : isEntreprise()}"
+     routerLink="/entreprise"
+     (click)="addNewItem(1)">Entreprise</a>
+  <a id="onglet_stagiaire"
+     [ngClass]="{'actif' : isStagiaire()}"
+     (click)="addNewItem(2)">Stagiaire</a>
+  <a id="onglet_inscrire"
+     [ngClass]="{'actif' : isInscription()}"
+     (click)="addNewItem(3)">Inscription</a>
+  <a id="onglet_aide"
+     [ngClass]="{'actif' : isAide()}"
+     (click)="addNewItem(4)">Aide</a>
+  <a id="onglet_deconnection"
+     [ngClass]="{'actif' : isDeconnexion()}"
+     (click)="addNewItem(5)">Deconnexion</a>
 
 </nav>

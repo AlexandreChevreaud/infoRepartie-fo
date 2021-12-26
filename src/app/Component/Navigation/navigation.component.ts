@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Navigations} from "../../Enums/Navigations";
 
 
@@ -9,10 +9,13 @@ import {Navigations} from "../../Enums/Navigations";
 })
 export class NavigationComponent implements OnInit {
 
-  //TODO Réparer l'input pour que ca marche et mettre les ngclass dans le HTML
+  //TODO Ajouter les router quand les pages seront créées
 
   @Input()
   navigations: Navigations | undefined;
+
+  @Output()
+  n = new EventEmitter<Navigations>();
 
   constructor() {
   }
@@ -24,4 +27,27 @@ export class NavigationComponent implements OnInit {
     return this.navigations !== undefined && this.navigations == Navigations.Accueil;
   }
 
+  isEntreprise(): boolean {
+    return this.navigations !== undefined && this.navigations == Navigations.Entreprise;
+  }
+
+  isStagiaire(): boolean {
+    return this.navigations !== undefined && this.navigations == Navigations.Stagiaire;
+  }
+
+  isAide(): boolean {
+    return this.navigations !== undefined && this.navigations == Navigations.Aide;
+  }
+
+  isDeconnexion(): boolean {
+    return this.navigations !== undefined && this.navigations == Navigations.Deconnexion;
+  }
+
+  isInscription(): boolean {
+    return this.navigations !== undefined && this.navigations == Navigations.Inscription;
+  }
+
+  addNewItem(value: Navigations) {
+    this.n.emit(value);
+  }
 }

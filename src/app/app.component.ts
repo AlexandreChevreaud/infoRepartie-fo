@@ -14,4 +14,8 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  updateNav(navigations: Navigations) {
+    this.nav = navigations;
+  }
 }

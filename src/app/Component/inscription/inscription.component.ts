@@ -8,6 +8,8 @@ import {LogInService} from "../../Services/LogInService";
 import {FormBuilder} from "@angular/forms";
 import {Stage} from "../../Models/Stage";
 import {ProfesseurService} from "../../Services/ProfesseurService";
+import {EtudiantService} from "../../Services/EtudiantService";
+import {EntrepriseService} from "../../Services/EntrepriseService";
 
 
 @Component({
@@ -35,7 +37,7 @@ export class InscriptionComponent implements OnInit {
 
   });
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private logInService: LogInService, private ProfService: ProfesseurService) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private logInService: LogInService, private profService: ProfesseurService, private etudiantService: EtudiantService, private enterpriseService: EntrepriseService) {
 
 
   }
@@ -45,8 +47,16 @@ export class InscriptionComponent implements OnInit {
       this.router.navigate(['login'])
     }
     this.types = this.initStagetypes();
-    this.ProfService.getAllProf().subscribe(value => {
+    this.profService.getAllProf().subscribe(value => {
       this.professeurs = value;
+    });
+
+    this.etudiantService.getAllEtudiant().subscribe(value => {
+      this.etudiants = value;
+    });
+
+    this.enterpriseService.getAllProf().subscribe(value => {
+      this.entreprises = value;
     });
 
   }
@@ -73,6 +83,8 @@ export class InscriptionComponent implements OnInit {
       numStage: 0,
       numEntreprise: this.loginForm.value.entreprise,
     };
+
+    console.log(stage);
 
 
   }

@@ -1,1 +1,38 @@
-<p>inscription works!</p>
+<form action="" method="get" class="form-example">
+  <div class="form-example">
+    <label>Contact </label>
+    <!-- Entreprise  -->
+    <div class="form-example">
+      <label>Entreprise </label>
+      <select formControlName="entreprise">
+        <option [ngValue]="null" disabled>Choisissez l'enterprise</option>
+        <option *ngFor="let ent of this.entreprises" [ngValue]="ent">
+          {{ ent.raisonSociale }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Etudiant  -->
+    <div class="form-example">
+      <label>Etudiant </label>
+      <select formControlName="etudiant">
+        <option [ngValue]="null" disabled>Choisissez l'étudiant</option>
+        <option *ngFor="let etu of this.etudiants" [ngValue]="etu">
+          {{ etu.nomEtudiant }}
+        </option>
+      </select>
+    </div>
+
+    <!-- professeur  -->
+    <div class="form-example">
+      <label>Professeur </label>
+      <select formControlName="professeur">
+        <option [ngValue]="null" disabled>Choisissez le professeur</option>
+        <option *ngFor="let pro of this.professeurs" [ngValue]="pro">
+          {{ pro.nomProf }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+</form>

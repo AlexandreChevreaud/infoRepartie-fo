@@ -10,12 +10,15 @@
        (click)="addNewItem(1)"><span>Entreprise</span></a>
     <a id="onglet_stagiaire"
        [ngClass]="{'actif' : isStagiaire()}"
+       routerLink="/stagiaire"
        (click)="addNewItem(2)"><span>Stagiaire</span></a>
     <a id="onglet_inscrire"
        [ngClass]="{'actif' : isInscription()}"
+       routerLink="/inscription"
        (click)="addNewItem(3)"><span>Inscription</span></a>
     <a id="onglet_aide"
        [ngClass]="{'actif' : isAide()}"
+       routerLink="/aide"
        (click)="addNewItem(4)"><span>Aide</span></a>
     <a id="onglet_deconnection"
        [ngClass]="{'actif' : isDeconnexion()}"

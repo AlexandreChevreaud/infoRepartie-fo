@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
+import {LogInService} from "../../Services/LogInService";
 
 @Component({
   selector: 'log-in',
@@ -14,13 +15,16 @@ export class LogInComponent implements OnInit {
     typeConnexion: ''
   });
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private loginService: LogInService) {
   }
 
   ngOnInit(): void {
+
   }
 
   onSubmit() {
-    console.log("test")
+    console.log(this.loginForm.value.login)
+    this.loginService.isEtudiantExistant(this.loginForm.value.login, this.loginForm.value.password).subscribe()
   }
 }

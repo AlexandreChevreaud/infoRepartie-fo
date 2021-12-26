@@ -11,6 +11,7 @@ import {StagiaireComponent} from './Component/stagiaire/stagiaire.component';
 import {AideComponent} from './Component/aide/aide.component';
 import {LogInComponent} from './Component/log-in/log-in.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,11 +23,13 @@ import {ReactiveFormsModule} from "@angular/forms";
     StagiaireComponent,
     AideComponent,
     LogInComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [

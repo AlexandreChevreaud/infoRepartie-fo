@@ -9,6 +9,7 @@ import {Navigations} from "./Enums/Navigations";
 export class AppComponent implements OnInit {
   nav: Navigations = Navigations.Accueil;
 
+
   constructor() {
   }
 

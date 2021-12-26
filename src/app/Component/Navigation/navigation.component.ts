@@ -11,13 +11,14 @@ export class NavigationComponent implements OnInit {
 
   //TODO Ajouter les router quand les pages seront créées
 
-  //TODO développer et réduide 
+  //TODO manque a changer le margin quand on est en mode déduit
 
   @Input()
   navigations: Navigations | undefined;
 
   @Output()
   n = new EventEmitter<Navigations>();
+  isReduit = false;
 
   constructor() {
   }

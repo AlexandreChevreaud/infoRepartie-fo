@@ -1,23 +1,32 @@
-<nav>
-  <a id="onglet_accueil"
-     routerLink="/accueil"
-     [ngClass]="{'actif' : isAccueil()}"
-     (click)="addNewItem(0)">Accueil</a>
-  <a id="onglet_entreprise"
-     [ngClass]="{'actif' : isEntreprise()}"
-     routerLink="/entreprise"
-     (click)="addNewItem(1)">Entreprise</a>
-  <a id="onglet_stagiaire"
-     [ngClass]="{'actif' : isStagiaire()}"
-     (click)="addNewItem(2)">Stagiaire</a>
-  <a id="onglet_inscrire"
-     [ngClass]="{'actif' : isInscription()}"
-     (click)="addNewItem(3)">Inscription</a>
-  <a id="onglet_aide"
-     [ngClass]="{'actif' : isAide()}"
-     (click)="addNewItem(4)">Aide</a>
-  <a id="onglet_deconnection"
-     [ngClass]="{'actif' : isDeconnexion()}"
-     (click)="addNewItem(5)">Deconnexion</a>
+<div [ngClass]="{'reduit' : this.isReduit}">
+  <nav>
+    <a id="onglet_accueil"
+       routerLink="/accueil"
+       [ngClass]="{'actif' : isAccueil()}"
+       (click)="addNewItem(0)"><span>Accueil</span></a>
+    <a id="onglet_entreprise"
+       [ngClass]="{'actif' : isEntreprise()}"
+       routerLink="/entreprise"
+       (click)="addNewItem(1)"><span>Entreprise</span></a>
+    <a id="onglet_stagiaire"
+       [ngClass]="{'actif' : isStagiaire()}"
+       (click)="addNewItem(2)"><span>Stagiaire</span></a>
+    <a id="onglet_inscrire"
+       [ngClass]="{'actif' : isInscription()}"
+       (click)="addNewItem(3)"><span>Inscription</span></a>
+    <a id="onglet_aide"
+       [ngClass]="{'actif' : isAide()}"
+       (click)="addNewItem(4)"><span>Aide</span></a>
+    <a id="onglet_deconnection"
+       [ngClass]="{'actif' : isDeconnexion()}"
+       (click)="addNewItem(5)"><span>Deconnexion</span></a>
 
-</nav>
+    <div class="bottom">
+      <a id="icon_droite"
+         (click)="this.isReduit=false"><span>Développer</span></a>
+
+      <a id="icon_gauche"
+         (click)="this.isReduit=true"><span>Réduire</span></a>
+    </div>
+  </nav>
+</div>

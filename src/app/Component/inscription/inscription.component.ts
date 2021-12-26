@@ -2,6 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {Entreprise} from "../../Models/Entreprise";
 import {Etudiant} from "../../Models/Etudiant";
 import {Professeur} from "../../Models/Professeur";
+import {TypeStage} from "../../Enums/TypeStage";
+import {Router} from "@angular/router";
+import {LogInService} from "../../Services/LogInService";
+import {FormBuilder} from "@angular/forms";
 
 
 @Component({
@@ -9,19 +13,49 @@ import {Professeur} from "../../Models/Professeur";
   templateUrl: './inscription.component.html',
   styleUrls: ['./inscription.component.scss']
 })
+
+
 export class InscriptionComponent implements OnInit {
+  entreprises: Entreprise[] = [];
+  etudiants: Etudiant[] = [];
+  professeurs: Professeur[] = [];
+  types: string[] = [];
+  loginForm = this.formBuilder.group({
+    entreprise: '',
+    etudiant: '',
+    professeur: '',
+    dateDebut: Date.now(),
+    dateFin: Date.now(),
+    type: '',
+    description: '',
+    observation: '',
 
-  entreprises : Entreprise[];
-  etudiants : Etudiant[];
-  professeurs : Professeur[];
+  });
 
-  constructor() {
-    this.entreprises = [];
-    this.etudiants = [];
-    this.professeurs = [];
+  constructor(private formBuilder: FormBuilder, private router: Router, private logInService: LogInService) {
+
+
   }
 
   ngOnInit(): void {
+    if (!this.logInService.isConnected) {
+      this.router.navigate(['login'])
+    }
+    this.types = this.initStagetypes();
+
   }
 
+  initStagetypes(): string[] {
+    var types: string[] = [];
+    var a = Object.values(TypeStage).filter(x => typeof x == "string");
+    a.forEach((value) => {
+      types.push(value.toString());
+    });
+    return types;
+  }
+
+
+  onSubmit() {
+
+  }
 }

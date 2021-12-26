@@ -1,10 +1,10 @@
-<form action="" method="get" class="form-example">
+<form action="" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
   <div class="form-example">
     <label>Contact </label>
     <!-- Entreprise  -->
     <div class="form-example">
       <label>Entreprise </label>
-      <select formControlName="entreprise">
+      <select>
         <option [ngValue]="null" disabled>Choisissez l'enterprise</option>
         <option *ngFor="let ent of this.entreprises" [ngValue]="ent">
           {{ ent.raisonSociale }}
@@ -15,7 +15,7 @@
     <!-- Etudiant  -->
     <div class="form-example">
       <label>Etudiant </label>
-      <select formControlName="etudiant">
+      <select>
         <option [ngValue]="null" disabled>Choisissez l'étudiant</option>
         <option *ngFor="let etu of this.etudiants" [ngValue]="etu">
           {{ etu.nomEtudiant }}
@@ -26,13 +26,62 @@
     <!-- professeur  -->
     <div class="form-example">
       <label>Professeur </label>
-      <select formControlName="professeur">
+      <select>
         <option [ngValue]="null" disabled>Choisissez le professeur</option>
         <option *ngFor="let pro of this.professeurs" [ngValue]="pro">
           {{ pro.nomProf }}
         </option>
       </select>
     </div>
+  </div>
+
+  <div class="form-example">
+    <label>Description du stage </label>
+
+    <!-- date début  -->
+    <div class="form-example">
+      <label>Date de début </label>
+      <input type="date" name="debut"/>
+    </div>
+
+    <!-- date fin  -->
+    <div class="form-example">
+      <label>Date de début </label>
+      <input type="date" name="fin"/>
+    </div>
+
+
+    <!-- type de stage  -->
+    <div class="form-example">
+      <label>Type de stage </label>
+      <select>
+        <option [ngValue]="null" disabled>Choisissez le type de stage</option>
+        <option *ngFor="let typ of this.types" [ngValue]="typ">
+          {{ typ }}
+        </option>
+      </select>
+    </div>
+
+    <!-- description -->
+    <div class="form-example">
+      <label>Description du projet </label>
+      <textarea name="description">
+
+      </textarea>
+
+    </div>
+
+    <!-- observation -->
+    <div class="form-example">
+      <label>Observation </label>
+      <textarea name="observation">
+
+      </textarea>
+
+    </div>
+
+    <input type="submit" value="Subscribe!">
+
   </div>
 
 </form>

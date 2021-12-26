@@ -6,10 +6,11 @@ import {accueilComponent} from "./Component/Accueil/accueil.component";
 import {NavigationComponent} from './Component/Navigation/navigation.component';
 import {EntrepriseComponent} from './Component/entreprise/entreprise.component';
 import {AppComponent} from "./app.component";
-import { InscriptionComponent } from './Component/inscription/inscription.component';
-import { StagiaireComponent } from './Component/stagiaire/stagiaire.component';
-import { AideComponent } from './Component/aide/aide.component';
-import { LogInComponent } from './Component/log-in/log-in.component';
+import {InscriptionComponent} from './Component/inscription/inscription.component';
+import {StagiaireComponent} from './Component/stagiaire/stagiaire.component';
+import {AideComponent} from './Component/aide/aide.component';
+import {LogInComponent} from './Component/log-in/log-in.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LogInComponent } from './Component/log-in/log-in.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [

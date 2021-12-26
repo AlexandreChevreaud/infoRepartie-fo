@@ -1,8 +1,9 @@
-<div>
+<div id="corps">
   <navigation
     [navigations]="this.nav"
     (n)="updateNav($event)"
   ></navigation>
+  <router-outlet></router-outlet>
 </div>
 
-<router-outlet></router-outlet>
+

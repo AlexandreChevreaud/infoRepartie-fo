@@ -1,8 +1,19 @@
-<table>
+<button class="large_bouton_operation">
+  Rechercher une entreprise
+</button>
+
+<button (click)=" createEntreprise()">
+<span>
+
+  </span> Ajouter une entreprise
+</button>
+<table class="list">
   <thead>
-  <tr>
+  <tr class="list">
     <th>
-      Opération
+      <span class="list">
+        Opération
+      </span>
     </th>
     <th>
       Entreprise
@@ -25,14 +36,27 @@
   <ng-container *ngFor="let ent of entreprises">
     <tr>
       <td>
-        <span>LOGOS</span>
+        <a class="icon_voir fake_bouton" (click)="createEntreprise()"></a>
+        <a class="icon_inscrire fake_bouton" (click)="createEntreprise()"></a>
+        <div *ngIf="isProf">
+          <a class="icon_modifier fake_bouton" (click)="createEntreprise()">
+          </a>
+          <a class="icon_supprimer fake_bouton" (click)="createEntreprise()">
+          </a>
+        </div>
       </td>
       <td>{{ent.raisonSociale}}</td>
       <td>{{ent.nom_Resp}}</td>
       <td>{{ent.rueEntreprise + ' ' + ent.cpEntreprise + ' ' + ent.villeEntreprise}}</td>
+      <td>
+        <button *ngIf="ent.siteEntreprise!=''" class="">
+          <a [href]="ent.siteEntreprise" class="fake_bouton icon_website">
+
+          </a>
+        </button>
+      </td>
       <td><span>{{getSpecialite(ent.numEntreprise)}}</span></td>
-      /
-      <td></td>
+
     </tr>
 
   </ng-container>

@@ -25,11 +25,15 @@ export class VueEntrepriseComponent implements OnInit {
   entreprises: Entreprise[] = [];
   specialites: Specialite[] = [];
   specEntreprises: SpecEntreprise[] = [];
+  isProf: boolean = false;
 
   ngOnInit(): void {
     if (!this.logInService.isConnected) {
       this.router.navigate(['login'])
     }
+    this.isProf = this.logInService.isProfesseur;
+
+    this.logInService.isProfesseur
 
     this.entrepriseService.getAllEntreprises().subscribe((value => {
       this.entreprises = value;
@@ -43,7 +47,6 @@ export class VueEntrepriseComponent implements OnInit {
       console.log(value);
       //TODO trouver pk les specialite ne chargent pas
     }));
-    // this.entreprises.sort((a, b) => a.raisonSociale.localeCompare(b.raisonSociale));
 
   }
 
@@ -62,4 +65,11 @@ export class VueEntrepriseComponent implements OnInit {
   }
 
 
+  createEntreprise() {
+
+  }
+
+  findEntreprise() {
+
+  }
 }

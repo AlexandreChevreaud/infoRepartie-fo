@@ -7,7 +7,7 @@ import {Injectable} from '@angular/core';
 })
 export class LogInService {
 
-  isConnected = false;
+  isConnected = true;
   isProfesseur = false;
 
   urlEtudiant = "http://localhost:8080/etudiant";

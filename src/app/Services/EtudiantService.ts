@@ -16,4 +16,9 @@ export class EtudiantService {
   getAllEtudiant(): Observable<Array<Etudiant>> {
     return this.http.get<Array<Etudiant>>(this.url + this.SLASH + "all");
   }
+
+  createEtudiant(etu: Etudiant): Observable<Etudiant> {
+    return this.http.post<Etudiant>(this.url + this.SLASH, etu);
+
+  }
 }

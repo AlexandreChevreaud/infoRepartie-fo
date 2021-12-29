@@ -10,14 +10,14 @@
 
     <!-- Prenom  -->
     <div class="form-example">
-      <label>Nom </label>
-      <input type="text" name="Prenom" required formControlName="Prenom"/>
+      <label>Prenom </label>
+      <input type="text" name="prenom" required formControlName="prenom"/>
     </div>
 
     <!-- username  -->
     <div class="form-example">
       <label>Nom d'utilisateur (8 caractères) </label>
-      <input type="text" name="nom" required formControlName="username"/>
+      <input type="text" name="username" required formControlName="username"/>
     </div>
 
     <!-- password  -->
@@ -34,13 +34,13 @@
       <input type="date" name="dateObtention" required formControlName="dateObtention"/>
     </div>
 
-    <!-- Etudiant  -->
+    <!-- Classe  -->
     <div class="form-example">
-      <label>Etudiant </label>
-      <select formControlName="etudiant" required>
-        <option [ngValue]="null" disabled>Choisissez l'étudiant</option>
-        <option *ngFor="let etu of this.etudiants" [ngValue]="etu.numEtudiant">
-          {{ etu.nomEtudiant + ' ' + etu.prenomEtudiant }}
+      <label>Classe </label>
+      <select formControlName="classe" required>
+        <option [ngValue]="null" disabled>Classe</option>
+        <option *ngFor="let cla of this.classes" [ngValue]="cla.numClasse">
+          {{ cla.nomClasse }}
         </option>
       </select>
     </div>

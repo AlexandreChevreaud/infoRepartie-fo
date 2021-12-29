@@ -6,6 +6,7 @@ import {LogInComponent} from "./Component/log-in/log-in.component";
 import {StagiaireComponent} from "./Component/stagiaire/stagiaire.component";
 import {AideComponent} from "./Component/aide/aide.component";
 import {InscriptionComponent} from "./Component/inscription/inscription.component";
+import {VueEntrepriseComponent} from "./Component/entreprise/vue-entreprise/vue-entreprise.component";
 
 const routes: Routes = [
   {path: 'accueil', component: accueilComponent},
@@ -14,7 +15,9 @@ const routes: Routes = [
   {path: 'stagiaire', component: StagiaireComponent},
   {path: 'aide', component: AideComponent},
   {path: 'inscription', component: InscriptionComponent},
-  {path: '', redirectTo: '/login', pathMatch: 'full'}
+  {path: 'vue', component: VueEntrepriseComponent},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  
 ];
 
 @NgModule({

@@ -12,6 +12,7 @@ import {AideComponent} from './Component/aide/aide.component';
 import {LogInComponent} from './Component/log-in/log-in.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { VueEntrepriseComponent } from './Component/entreprise/vue-entreprise/vue-entreprise.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {HttpClientModule} from "@angular/common/http";
     StagiaireComponent,
     AideComponent,
     LogInComponent,
+    VueEntrepriseComponent,
 
   ],
   imports: [

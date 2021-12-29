@@ -1,0 +1,40 @@
+<table>
+  <thead>
+  <tr>
+    <th>
+      Opération
+    </th>
+    <th>
+      Entreprise
+    </th>
+    <th>
+      Responsable
+    </th>
+    <th>
+      Adresse
+    </th>
+    <th>
+      Site
+    </th>
+    <th>
+      Specialité
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngFor="let ent of entreprises">
+    <tr>
+      <td>
+        <span>LOGOS</span>
+      </td>
+      <td>{{ent.raisonSociale}}</td>
+      <td>{{ent.nom_Resp}}</td>
+      <td>{{ent.rueEntreprise + ' ' + ent.cpEntreprise + ' ' + ent.villeEntreprise}}</td>
+      <td><span>{{getSpecialite(ent.numEntreprise)}}</span></td>
+      /
+      <td></td>
+    </tr>
+
+  </ng-container>
+  </tbody>
+</table>

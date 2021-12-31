@@ -27,6 +27,7 @@ import { EntrepriseCreationComponent } from './Component/entreprise/entreprise-c
     LogInComponent,
     EntrepriseCreationComponent,
     VueEntrepriseComponent,
+    EntrepriseCreationComponent,
 
   ],
   imports: [

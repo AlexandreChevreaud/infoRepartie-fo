@@ -40,11 +40,13 @@ export class EntrepriseCreationComponent implements OnInit {
   }
 
   onSubmit() {
+
+    console.log(this.loginForm.value);
     let ent: Entreprise = {
       Email: this.loginForm.value.mail,
-      Niveau: this.loginForm.value.niveau,
-      Nom_Resp: this.loginForm.value.nomResp,
-      Observation: this.loginForm.value.obs,
+      niveau: this.loginForm.value.niveau,
+      nomResp: this.loginForm.value.nomResp,
+      observation: this.loginForm.value.obs,
       cpEntreprise: this.loginForm.value.codePostal,
       faxEntreprise: this.loginForm.value.fax,
       nomContact: this.loginForm.value.nomContact,
@@ -54,6 +56,8 @@ export class EntrepriseCreationComponent implements OnInit {
       siteEntreprise: this.loginForm.value.url,
       telEntreprise: this.loginForm.value.tel,
       villeEntreprise: this.loginForm.value.ville,
+      enActivite: 1
+
 
     };
 

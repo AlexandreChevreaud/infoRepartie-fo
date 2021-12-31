@@ -3,16 +3,17 @@ export interface Entreprise {
   numEntreprise: number;
   raisonSociale: string;
   nomContact: string;
-  nom_Resp: string;
+  nomResp: string;
   rueEntreprise: string;
   cpEntreprise: number;
   villeEntreprise: string;
   telEntreprise: string;
   faxEntreprise: string;
   Email: string;
-  Observation: string;
+  observation: string;
   siteEntreprise: string;
-  Niveau: string;
+  niveau: string;
+  enActivite: number;
 
 
 }

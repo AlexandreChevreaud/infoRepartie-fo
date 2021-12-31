@@ -1,4 +1,4 @@
-<div [ngClass]="{'reduit' : this.isReduit}">
+<div>
   <nav>
     <a id="onglet_accueil"
        routerLink="/accueil"
@@ -25,10 +25,10 @@
 
     <div class="bottom">
       <a id="icon_droite"
-         (click)="this.isReduit=false"><span>Développer</span></a>
+         (click)="reduire(false)"><span>Développer</span></a>
 
       <a id="icon_gauche"
-         (click)="this.isReduit=true"><span>Réduire</span></a>
+         (click)="reduire(true)"><span>Réduire</span></a>
     </div>
   </nav>
 </div>

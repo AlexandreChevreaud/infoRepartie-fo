@@ -1,9 +1,12 @@
-<div id="corps">
-  <navigation
-    [navigations]="this.nav"
-    (n)="updateNav($event)"
-  ></navigation>
-  <router-outlet></router-outlet>
+<div [ngClass]="{'reduit' : this.isReduit}">
+  <div id="corps">
+    <navigation
+      [navigations]="this.nav"
+      (n)="updateNav($event)"
+      (isReduit)="reduit($event)"
+    ></navigation>
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
 

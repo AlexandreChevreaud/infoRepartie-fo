@@ -11,15 +11,16 @@ import {Router} from "@angular/router";
 })
 export class NavigationComponent implements OnInit {
 
-  //TODO manque a changer le margin quand on est en mode déduit
-
-  isReduit = false;
+  reduit = false;
 
   @Input()
   navigations: Navigations | undefined;
 
   @Output()
   n = new EventEmitter<Navigations>();
+
+  @Output()
+  isReduit = new EventEmitter<boolean>();
 
   constructor(private logInService: LogInService,
               private router: Router) {
@@ -50,6 +51,11 @@ export class NavigationComponent implements OnInit {
 
   addNewItem(value: Navigations) {
     this.n.emit(value);
+  }
+
+  reduire(value: boolean) {
+    this.reduit = value;
+    this.isReduit.emit(this.reduit)
   }
 
   deconnexion() {

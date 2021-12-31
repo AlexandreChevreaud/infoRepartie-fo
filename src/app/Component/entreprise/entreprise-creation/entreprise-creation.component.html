@@ -85,19 +85,13 @@
       </div>
 
     </div>
-
-
-    <div class="form-example">
-      <label>Email </label>
-      <input type="email" name="mail" formControlName="mail">
-    </div>
   </div>
 
   <div class="form-exemple">
     <h1>Spécialité</h1>
     <div class="form-example">
       <label>Entreprise </label>
-      <select formControlName="entreprise" required>
+      <select formControlName="spec" required>
         <option [ngValue]="null" disabled>Choisissez l'enterprise</option>
         <option *ngFor="let spe of this.specialites" [ngValue]="spe.num_spec">
           {{ spe.libelle }}

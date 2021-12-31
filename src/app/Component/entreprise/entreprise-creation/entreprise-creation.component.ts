@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {LogInService} from "../../../Services/LogInService";
 import {FormBuilder} from "@angular/forms";
+import {Entreprise} from "../../../Models/Entreprise";
+import {EntrepriseService} from "../../../Services/EntrepriseService";
 
 @Component({
   selector: 'app-entreprise-creation',
@@ -11,19 +13,26 @@ import {FormBuilder} from "@angular/forms";
 export class EntrepriseCreationComponent implements OnInit {
 
   loginForm = this.formBuilder.group({
-    nom: '',
-    prenom: '',
-    username: '',
-    pass: '',
-    dateObtention: Date.now(),
-    classe: 0,
-
+    nomEntreprise: '',
+    nomContact: '',
+    nomResp: '',
+    rue: '',
+    codePostal: '',
+    ville: '',
+    tel: '',
+    fax: '',
+    mail: '',
+    obs: '',
+    url: '',
+    niveau: '',
+    spec: ''
   });
   specialites: Array<any> = [];
 
   constructor(private router: Router,
               private logInService: LogInService,
-              private formBuilder: FormBuilder,) {
+              private formBuilder: FormBuilder,
+              private entrepriseService: EntrepriseService) {
   }
 
   ngOnInit(): void {
@@ -31,6 +40,23 @@ export class EntrepriseCreationComponent implements OnInit {
   }
 
   onSubmit() {
+    let ent: Entreprise = {
+      Email: this.loginForm.value.mail,
+      Niveau: this.loginForm.value.niveau,
+      Nom_Resp: this.loginForm.value.nomResp,
+      Observation: this.loginForm.value.obs,
+      cpEntreprise: this.loginForm.value.codePostal,
+      faxEntreprise: this.loginForm.value.fax,
+      nomContact: this.loginForm.value.nomContact,
+      numEntreprise: 0,
+      raisonSociale: this.loginForm.value.nomEntreprise,
+      rueEntreprise: this.loginForm.value.rue,
+      siteEntreprise: this.loginForm.value.url,
+      telEntreprise: this.loginForm.value.tel,
+      villeEntreprise: this.loginForm.value.ville,
 
+    };
+
+    this.entrepriseService.createEntreprise(ent).subscribe();
   }
 }

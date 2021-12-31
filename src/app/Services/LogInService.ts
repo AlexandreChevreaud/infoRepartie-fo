@@ -8,7 +8,8 @@ import {Injectable} from '@angular/core';
 export class LogInService {
 
   isConnected = true;
-  isProfesseur = false;
+  //TODO a gérer a la connexion non ?
+  isProfesseur = true;
 
   urlEtudiant = "http://localhost:8080/etudiant";
   urlProf = "http://localhost:8080/prof";

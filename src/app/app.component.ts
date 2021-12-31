@@ -9,7 +9,7 @@ import {LogInService} from "./Services/LogInService";
 })
 export class AppComponent implements OnInit {
   nav: Navigations = Navigations.Accueil;
-
+  isReduit = false;
 
   constructor(private logInService: LogInService) {
   }
@@ -19,5 +19,9 @@ export class AppComponent implements OnInit {
 
   updateNav(navigations: Navigations) {
     this.nav = navigations;
+  }
+
+  reduit($event: boolean) {
+    this.isReduit = $event;
   }
 }

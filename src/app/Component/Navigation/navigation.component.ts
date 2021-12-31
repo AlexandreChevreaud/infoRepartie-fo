@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Navigations} from "../../Enums/Navigations";
+import {LogInService} from "../../Services/LogInService";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -19,7 +21,8 @@ export class NavigationComponent implements OnInit {
   @Output()
   n = new EventEmitter<Navigations>();
 
-  constructor() {
+  constructor(private logInService: LogInService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -41,15 +44,20 @@ export class NavigationComponent implements OnInit {
     return this.navigations !== undefined && this.navigations == Navigations.Aide;
   }
 
-  isDeconnexion(): boolean {
-    return this.navigations !== undefined && this.navigations == Navigations.Deconnexion;
-  }
-
   isInscription(): boolean {
     return this.navigations !== undefined && this.navigations == Navigations.Inscription;
   }
 
   addNewItem(value: Navigations) {
     this.n.emit(value);
+  }
+
+  deconnexion() {
+    console.log("test")
+    this.logInService.isConnected = false;
+    this.logInService.isProfesseur = false;
+    this.logInService.login = "";
+    this.router.navigate(["login"])
+    this.navigations = Navigations.Accueil;
   }
 }

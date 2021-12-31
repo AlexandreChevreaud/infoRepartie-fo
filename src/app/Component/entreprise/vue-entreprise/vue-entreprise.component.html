@@ -1,10 +1,12 @@
 <button class="large_bouton_operation">
   Rechercher une entreprise
 </button>
-
+<div *ngIf="isProf">
+  <hr>
+  
+</div>
 <button (click)=" createEntreprise()">
 <span>
-
   </span> Ajouter une entreprise
 </button>
 <table class="list">

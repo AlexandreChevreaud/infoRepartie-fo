@@ -13,6 +13,7 @@ import {LogInComponent} from './Component/log-in/log-in.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { VueEntrepriseComponent } from './Component/entreprise/vue-entreprise/vue-entreprise.component';
+import { EntrepriseCreationComponent } from './Component/entreprise/entreprise-creation/entreprise-creation.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { VueEntrepriseComponent } from './Component/entreprise/vue-entreprise/vu
     StagiaireComponent,
     AideComponent,
     LogInComponent,
+    EntrepriseCreationComponent,
     VueEntrepriseComponent,
 
   ],

@@ -13,7 +13,7 @@ export class EntrepriseService {
   constructor(private http: HttpClient) {
   }
 
-  getAllProf(): Observable<Array<Entreprise>> {
+  getAllEntreprises(): Observable<Array<Entreprise>> {
     return this.http.get<Array<Entreprise>>(this.url + this.SLASH + "all");
   }
 }

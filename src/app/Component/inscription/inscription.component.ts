@@ -62,7 +62,7 @@ export class InscriptionComponent implements OnInit {
       this.etudiants = value;
     });
 
-    this.enterpriseService.getAllProf().subscribe(value => {
+    this.enterpriseService.getAllEntreprises().subscribe(value => {
       this.entreprises = value;
     });
 

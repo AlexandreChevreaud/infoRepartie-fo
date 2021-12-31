@@ -3,7 +3,7 @@
 </button>
 <div *ngIf="isProf">
   <hr>
-  
+
 </div>
 <button (click)=" createEntreprise()">
 <span>
@@ -48,7 +48,7 @@
         </div>
       </td>
       <td>{{ent.raisonSociale}}</td>
-      <td>{{ent.nom_Resp}}</td>
+      <td>{{ent.nomResp}}</td>
       <td>{{ent.rueEntreprise + ' ' + ent.cpEntreprise + ' ' + ent.villeEntreprise}}</td>
       <td>
         <button *ngIf="ent.siteEntreprise!=''" class="">

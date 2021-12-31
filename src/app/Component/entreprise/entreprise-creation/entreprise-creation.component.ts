@@ -4,6 +4,7 @@ import {LogInService} from "../../../Services/LogInService";
 import {FormBuilder} from "@angular/forms";
 import {Entreprise} from "../../../Models/Entreprise";
 import {EntrepriseService} from "../../../Services/EntrepriseService";
+import {Specialite} from "../../../Models/Specialite";
 
 @Component({
   selector: 'app-entreprise-creation',
@@ -27,7 +28,7 @@ export class EntrepriseCreationComponent implements OnInit {
     niveau: '',
     spec: ''
   });
-  specialites: Array<any> = [];
+  specialites: Array<Specialite> = [];
 
   constructor(private router: Router,
               private logInService: LogInService,
@@ -62,5 +63,7 @@ export class EntrepriseCreationComponent implements OnInit {
     };
 
     this.entrepriseService.createEntreprise(ent).subscribe();
+
+    //TODO attendre le
   }
 }

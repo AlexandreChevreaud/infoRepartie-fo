@@ -93,7 +93,7 @@
       <label>Entreprise </label>
       <select formControlName="spec" required>
         <option [ngValue]="null" disabled>Choisissez l'enterprise</option>
-        <option *ngFor="let spe of this.specialites" [ngValue]="spe.num_spec">
+        <option *ngFor="let spe of this.specialites" [ngValue]="spe.numSpec">
           {{ spe.libelle }}
         </option>
       </select>

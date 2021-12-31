@@ -21,8 +21,7 @@
        routerLink="/aide"
        (click)="addNewItem(4)"><span>Aide</span></a>
     <a id="onglet_deconnection"
-       [ngClass]="{'actif' : isDeconnexion()}"
-       (click)="addNewItem(5)"><span>Deconnexion</span></a>
+       (click)="deconnexion()"><span>Deconnexion</span></a>
 
     <div class="bottom">
       <a id="icon_droite"

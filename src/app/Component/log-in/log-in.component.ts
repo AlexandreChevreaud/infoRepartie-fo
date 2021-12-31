@@ -30,6 +30,7 @@ export class LogInComponent implements OnInit {
       this.loginService.isEtudiantExistant(this.loginForm.value.login, this.loginForm.value.password).subscribe(value => {
         this.loginService.isConnected = value
         if (value) {
+          this.loginService.login = this.loginForm.value.login;
           this.router.navigate(['accueil']);
         }
       });
@@ -38,6 +39,7 @@ export class LogInComponent implements OnInit {
         this.loginService.isConnected = value
         if (value) {
           this.loginService.isProfesseur = value;
+          this.loginService.login = this.loginForm.value.login;
           this.router.navigate(['accueil']);
         }
       });

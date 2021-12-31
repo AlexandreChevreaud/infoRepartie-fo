@@ -6,6 +6,7 @@ import {LogInComponent} from "./Component/log-in/log-in.component";
 import {StagiaireComponent} from "./Component/stagiaire/stagiaire.component";
 import {AideComponent} from "./Component/aide/aide.component";
 import {InscriptionComponent} from "./Component/inscription/inscription.component";
+import {EntrepriseCreationComponent} from "./Component/entreprise/entreprise-creation/entreprise-creation.component";
 
 const routes: Routes = [
   {path: 'accueil', component: accueilComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'stagiaire', component: StagiaireComponent},
   {path: 'aide', component: AideComponent},
   {path: 'inscription', component: InscriptionComponent},
+  {path: 'creationentreprise', component: EntrepriseCreationComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 

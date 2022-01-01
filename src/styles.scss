@@ -405,5 +405,11 @@ input[type="submit"]:hover, input[type="button"]:hover, .large_bouton_operation 
   white-space: nowrap;
 }
 
+.required:after {
+  color: #e32;
+  content: '*';
+  display: inline;
+}
+
 
 

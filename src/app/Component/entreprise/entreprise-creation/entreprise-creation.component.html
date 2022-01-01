@@ -90,9 +90,9 @@
   <div class="form-exemple">
     <h1>Spécialité</h1>
     <div class="form-example">
-      <label>Entreprise </label>
-      <select formControlName="spec" required>
-        <option [ngValue]="null" disabled>Choisissez l'enterprise</option>
+      <label class="required">Specialite </label>
+      <select multiple formControlName="spec" required>
+        <option [ngValue]="null" disabled>Choisissez la specialite</option>
         <option *ngFor="let spe of this.specialites" [ngValue]="spe.numSpec">
           {{ spe.libelle }}
         </option>

@@ -16,4 +16,8 @@ export class SpecEntrepriseService {
   getAllSpecEnterprise(): Observable<Array<SpecEntreprise>> {
     return this.http.get<Array<SpecEntreprise>>(this.url + this.SLASH + "all");
   }
+
+  createSpecEnterprise(spec: Array<SpecEntreprise>): Observable<Array<SpecEntreprise>> {
+    return this.http.post<Array<SpecEntreprise>>(this.url + this.SLASH + "create", spec);
+  }
 }

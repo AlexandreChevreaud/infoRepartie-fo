@@ -1,6 +1,6 @@
 export interface Entreprise {
 
-  numEntreprise: number;
+  numEntreprise: number | undefined;
   raisonSociale: string;
   nomContact: string;
   nomResp: string;

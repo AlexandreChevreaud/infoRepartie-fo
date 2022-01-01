@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Navigations} from "../../Enums/Navigations";
+import {LogInService} from "../../Services/LogInService";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -9,9 +11,7 @@ import {Navigations} from "../../Enums/Navigations";
 })
 export class NavigationComponent implements OnInit {
 
-  //TODO manque a changer le margin quand on est en mode déduit
-
-  isReduit = false;
+  reduit = false;
 
   @Input()
   navigations: Navigations | undefined;
@@ -19,7 +19,11 @@ export class NavigationComponent implements OnInit {
   @Output()
   n = new EventEmitter<Navigations>();
 
-  constructor() {
+  @Output()
+  isReduit = new EventEmitter<boolean>();
+
+  constructor(private logInService: LogInService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -41,15 +45,25 @@ export class NavigationComponent implements OnInit {
     return this.navigations !== undefined && this.navigations == Navigations.Aide;
   }
 
-  isDeconnexion(): boolean {
-    return this.navigations !== undefined && this.navigations == Navigations.Deconnexion;
-  }
-
   isInscription(): boolean {
     return this.navigations !== undefined && this.navigations == Navigations.Inscription;
   }
 
   addNewItem(value: Navigations) {
     this.n.emit(value);
+  }
+
+  reduire(value: boolean) {
+    this.reduit = value;
+    this.isReduit.emit(this.reduit)
+  }
+
+  deconnexion() {
+    console.log("test")
+    this.logInService.isConnected = false;
+    this.logInService.isProfesseur = false;
+    this.logInService.login = "";
+    this.router.navigate(["login"])
+    this.navigations = Navigations.Accueil;
   }
 }

@@ -44,8 +44,6 @@ export class VueEntrepriseComponent implements OnInit {
     }));
     this.specialiteService.getAllSpecialite().subscribe((value => {
       this.specialites = value;
-      console.log(value);
-      //TODO trouver pk les specialite ne chargent pas
     }));
 
   }
@@ -66,7 +64,7 @@ export class VueEntrepriseComponent implements OnInit {
 
 
   createEntreprise() {
-
+    this.router.navigate(['creationentreprise']);
   }
 
   findEntreprise() {

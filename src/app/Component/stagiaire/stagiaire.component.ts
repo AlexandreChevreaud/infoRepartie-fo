@@ -44,19 +44,21 @@ export class StagiaireComponent implements OnInit {
   }
 
   onSubmit() {
-    let etu: Etudiant =
-      {
-        numEtudiant: 0,
-        nomEtudiant: this.loginForm.value.nom,
-        prenomEtudiant: this.loginForm.value.prenom,
-        anneeObtention: this.loginForm.value.dateObtention,
-        login: this.loginForm.value.username,
-        mdp: this.loginForm.value.pass,
-        numClasse: this.loginForm.value.classe,
-        enActivite: 0, //TODO c'est quoi ca ?
-      };
-    this.etudiantService.createEtudiant(etu).subscribe();
-
-
+    if (this.loginForm.valid) {
+      let etu: Etudiant =
+        {
+          numEtudiant: 0,
+          nomEtudiant: this.loginForm.value.nom,
+          prenomEtudiant: this.loginForm.value.prenom,
+          anneeObtention: this.loginForm.value.dateObtention,
+          login: this.loginForm.value.username,
+          mdp: this.loginForm.value.pass,
+          numClasse: this.loginForm.value.classe,
+          enActivite: 0, //TODO c'est quoi ca ?
+        };
+      this.etudiantService.createEtudiant(etu).subscribe();
+    } else {
+      //TODO Faire un truc en cas d'erreur + mettre le message
+    }
   }
 }

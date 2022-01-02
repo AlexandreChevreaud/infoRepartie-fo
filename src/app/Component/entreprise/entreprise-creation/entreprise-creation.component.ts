@@ -75,7 +75,7 @@ export class EntrepriseCreationComponent implements OnInit {
       this.loginForm.value.spec.forEach((item: number) => {
         let s: SpecEntreprise = {
           numSpec: item,
-          numEntreprise: this.loginForm.value.spec
+          numEntreprise: value?.numEntreprise ?? 0
         };
         spec.push(s);
       });

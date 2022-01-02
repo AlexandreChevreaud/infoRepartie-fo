@@ -16,4 +16,8 @@ export class EntrepriseService {
   getAllEntreprises(): Observable<Array<Entreprise>> {
     return this.http.get<Array<Entreprise>>(this.url + this.SLASH + "all");
   }
+
+  createEntreprise(ent: Entreprise): Observable<Entreprise> {
+    return this.http.post<Entreprise>(this.url + this.SLASH + "create", ent);
+  }
 }

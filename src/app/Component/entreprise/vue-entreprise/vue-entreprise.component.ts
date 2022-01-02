@@ -48,7 +48,7 @@ export class VueEntrepriseComponent implements OnInit {
 
   }
 
-  findSpecialiteNumber(numEntreprise: number): number {
+  findSpecialiteNumber(numEntreprise: number | undefined): number {
     return this.specEntreprises.find(x => x.numEntreprise == numEntreprise)?.numSpec ?? 0;
   }
 
@@ -56,7 +56,7 @@ export class VueEntrepriseComponent implements OnInit {
     return this.specialites.find(x => x.numSpec == numSpecialte)?.libelle ?? "";
   }
 
-  getSpecialite(numEntreprise: number): string {
+  getSpecialite(numEntreprise: number | undefined): string {
     var a = this.findSpecialiteNumber(numEntreprise);
     var b = this.findSpecialite(a);
     return b;

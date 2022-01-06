@@ -20,4 +20,8 @@ export class EntrepriseService {
   createEntreprise(ent: Entreprise): Observable<Entreprise> {
     return this.http.post<Entreprise>(this.url + this.SLASH + "create", ent);
   }
+
+  deleteEntreprise(id: number): Observable<number> {
+    return this.http.delete<number>(this.url + this.SLASH + id);
+  }
 }

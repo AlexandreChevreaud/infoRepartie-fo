@@ -16,6 +16,4 @@ export class SpecialiteService {
   getAllSpecialite(): Observable<Array<Specialite>> {
     return this.http.get<Array<Specialite>>(this.url + this.SLASH + "all");
   }
-
-
 }

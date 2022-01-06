@@ -67,7 +67,27 @@ export class VueEntrepriseComponent implements OnInit {
     this.router.navigate(['creationentreprise']);
   }
 
-  findEntreprise() {
+  redirectToDetailsEntreprise() {
+    this.router.navigate(['detailsentreprise']);
 
+  }
+
+  supprimerEntreprise(ent: number | undefined) {
+    let id = <number>ent;
+    this.entrepriseService.deleteEntreprise(id).subscribe(value => {
+      var idx = this.entreprises.map(e => e.numEntreprise).indexOf(value);
+      if (idx > -1) {
+        this.entreprises.splice(idx, 1);
+      }
+    })
+  }
+
+  redirectToInscription() {
+    this.router.navigate(['inscription']);
+
+  }
+
+  updateEnteprise(ent: Entreprise) {
+    this.router.navigate(['inscription', {"data": ent}]);
   }
 }

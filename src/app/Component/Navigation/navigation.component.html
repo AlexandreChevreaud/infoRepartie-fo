@@ -1,33 +1,41 @@
 <div>
   <nav>
     <a id="onglet_accueil"
+       class="navBoostrap"
        routerLink="/accueil"
        [ngClass]="{'actif' : isAccueil()}"
        (click)="addNewItem(0)"><span>Accueil</span></a>
     <a id="onglet_entreprise"
+       class="navBoostrap"
        [ngClass]="{'actif' : isEntreprise()}"
        routerLink="/entreprise"
        (click)="addNewItem(1)"><span>Entreprise</span></a>
     <a id="onglet_stagiaire"
+       class="navBoostrap"
        [ngClass]="{'actif' : isStagiaire()}"
        routerLink="/stagiaire"
        (click)="addNewItem(2)"><span>Stagiaire</span></a>
     <a id="onglet_inscrire"
+       class="navBoostrap"
        [ngClass]="{'actif' : isInscription()}"
        routerLink="/inscription"
        (click)="addNewItem(3)"><span>Inscription</span></a>
     <a id="onglet_aide"
+       class="navBoostrap"
        [ngClass]="{'actif' : isAide()}"
        routerLink="/aide"
        (click)="addNewItem(4)"><span>Aide</span></a>
     <a id="onglet_deconnection"
+       class="navBoostrap"
        (click)="deconnexion()"><span>Deconnexion</span></a>
 
     <div class="bottom">
       <a id="icon_droite"
+         class="navBoostrap"
          (click)="reduire(false)"><span>Développer</span></a>
 
       <a id="icon_gauche"
+         class="navBoostrap"
          (click)="reduire(true)"><span>Réduire</span></a>
     </div>
   </nav>

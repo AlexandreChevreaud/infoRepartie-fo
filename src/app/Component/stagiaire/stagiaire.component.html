@@ -5,7 +5,7 @@
     <!-- Nom  -->
     <div class="form-example">
       <label class="required">Nom </label>
-      <input type="text" name="nom" required formControlName="nom"/>
+      <input mdbValidate type="text" name="nom" required formControlName="nom" ng-model="nom"/>
     </div>
 
     <!-- Prenom  -->
@@ -36,7 +36,7 @@
     <div class="form-example">
       <label class="required">Classe </label>
       <select formControlName="classe" required>
-        <option [selected]="true" selected disabled [ngValue]="null">Choisissez la classe</option>
+        <option [selected]="true" selected disabled [ngValue]="null" n>Choisissez la classe</option>
         <option *ngFor="let cla of this.classes" [ngValue]="cla.numClasse">
           {{ cla.nomClasse }}
         </option>

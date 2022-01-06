@@ -239,7 +239,7 @@ input, select, textarea {
 
 input[type=submit], input[type=button] {
   min-width: 0px;
-  width: 150px;
+  width: 250px;
 }
 
 textarea {
@@ -409,6 +409,14 @@ input[type="submit"]:hover, input[type="button"]:hover, .large_bouton_operation 
   color: #e32;
   content: '*';
   display: inline;
+}
+
+input.ng-invalid, select.ng-invalid {
+  background-color: pink;
+}
+
+input.ng-valid, select.ng-valid {
+  background-color: lightgreen;
 }
 
 

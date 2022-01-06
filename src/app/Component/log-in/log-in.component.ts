@@ -44,6 +44,8 @@ export class LogInComponent implements OnInit {
           this.loginService.isProfesseur = value;
           this.loginService.login = this.loginForm.value.login;
           this.router.navigate(['accueil']);
+        } else {
+          alert("Erreur d'authentification - Veuillez vérifier vos identifiants de connexion")
         }
       });
     }

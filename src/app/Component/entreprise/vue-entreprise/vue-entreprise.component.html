@@ -1,14 +1,12 @@
 <button class="large_bouton_operation">
   Rechercher une entreprise
 </button>
-<div *ngIf="isProf">
-  <hr>
-</div>
 <button (click)="createEntreprise()">
-
-<span>
-  </span> Ajouter une entreprise
+  <span>
+    Ajouter une entreprise
+  </span>
 </button>
+<hr>
 <table class="list">
   <thead>
   <tr class="list">
@@ -38,12 +36,12 @@
   <ng-container *ngFor="let ent of entreprises">
     <tr>
       <td>
-        <a class="icon_voir fake_bouton" (click)="createEntreprise()"></a>
-        <a class="icon_inscrire fake_bouton" (click)="createEntreprise()"></a>
+        <a class="icon_voir fake_bouton" (click)="redirectToDetailsEntreprise()"></a>
+        <a class="icon_inscrire fake_bouton" (click)="redirectToInscription()"></a>
         <div *ngIf="isProf">
-          <a class="icon_modifier fake_bouton" (click)="createEntreprise()">
+          <a class="icon_modifier fake_bouton" (click)="updateEnteprise(ent)">
           </a>
-          <a class="icon_supprimer fake_bouton" (click)="createEntreprise()">
+          <a class="icon_supprimer fake_bouton" (click)="supprimerEntreprise(ent.numEntreprise)">
           </a>
         </div>
       </td>

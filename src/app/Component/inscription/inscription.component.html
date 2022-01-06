@@ -1,12 +1,12 @@
 <!--TODO : gestion required + error + retour reponse http-->
-<form action="" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+<form action="" (ngSubmit)="onSubmit()" [formGroup]="formGroup">
   <div class="form-example">
     <label>Contact </label>
     <!-- Entreprise  -->
     <div class="form-example">
-      <label>Entreprise </label>
+      <label class="required">Entreprise </label>
       <select formControlName="entreprise" required>
-        <option [ngValue]="null" disabled>Choisissez l'enterprise</option>
+        <option [selected]="true" selected disabled [ngValue]="null">Choisissez l'enterprise</option>
         <option *ngFor="let ent of this.entreprises" [ngValue]="ent.numEntreprise">
           {{ ent.raisonSociale }}
         </option>
@@ -15,9 +15,9 @@
 
     <!-- Etudiant  -->
     <div class="form-example">
-      <label>Etudiant </label>
+      <label class="required">Etudiant </label>
       <select formControlName="etudiant" required>
-        <option [ngValue]="null" disabled>Choisissez l'étudiant</option>
+        <option [selected]="true" selected disabled [ngValue]="null">Choisissez l'étudiant</option>
         <option *ngFor="let etu of this.etudiants" [ngValue]="etu.numEtudiant">
           {{ etu.nomEtudiant + ' ' + etu.prenomEtudiant }}
         </option>
@@ -26,9 +26,9 @@
 
     <!-- professeur  -->
     <div class="form-example">
-      <label>Professeur </label>
+      <label class="required">Professeur </label>
       <select formControlName="professeur" required>
-        <option [ngValue]="null" disabled>Choisissez le professeur</option>
+        <option [selected]="true" selected disabled [ngValue]="null">Choisissez le professeur</option>
         <option *ngFor="let pro of this.professeurs" [ngValue]="pro.numProf">
           {{ pro.nomProf + ' ' + pro.prenomProf}}
         </option>
@@ -41,22 +41,22 @@
 
     <!-- date début  -->
     <div class="form-example">
-      <label>Date de début </label>
+      <label class="required">Date de début </label>
       <input type="date" name="debut" required formControlName="dateDebut"/>
     </div>
 
     <!-- date fin  -->
     <div class="form-example">
-      <label>Date de début </label>
+      <label class="required">Date de début </label>
       <input type="date" name="fin" required formControlName="dateFin"/>
     </div>
 
 
     <!-- type de stage  -->
     <div class="form-example">
-      <label>Type de stage </label>
+      <label class="required">Type de stage </label>
       <select formControlName="type" required>
-        <option [ngValue]="null" disabled>Choisissez le type de stage</option>
+        <option [selected]="true" selected disabled [ngValue]="null">Choisissez le type de stage</option>
         <option *ngFor="let typ of this.types" [ngValue]="typ">
           {{ typ }}
         </option>

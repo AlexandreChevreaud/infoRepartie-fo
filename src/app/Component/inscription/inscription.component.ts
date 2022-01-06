@@ -26,13 +26,13 @@ export class InscriptionComponent implements OnInit {
   professeurs: Professeur[] = [];
   types: string[] = [];
 
-  loginForm = this.formBuilder.group({
-    entreprise: '',
-    etudiant: '',
-    professeur: '',
+  formGroup = this.formBuilder.group({
+    entreprise: null,
+    etudiant: null,
+    professeur: null,
     dateDebut: Date.now(),
     dateFin: Date.now(),
-    type: '',
+    type: null,
     description: '',
     observation: '',
 
@@ -79,18 +79,23 @@ export class InscriptionComponent implements OnInit {
 
 
   onSubmit() {
-    let stage: Stage = {
-      debutStage: this.loginForm.value.dateDebut,
-      descProjet: this.loginForm.value.description,
-      finStage: this.loginForm.value.dateFin,
-      numEtudiant: this.loginForm.value.etudiant,
-      numProf: this.loginForm.value.professeur,
-      observationStage: this.loginForm.value.observation,
-      typeStage: this.loginForm.value.type,
-      numStage: 0,
-      numEntreprise: this.loginForm.value.entreprise,
-    };
-    this.stageService.createStage(stage).subscribe();
+    if (this.formGroup.valid) {
+      let stage: Stage = {
+        debutStage: this.formGroup.value.dateDebut,
+        descProjet: this.formGroup.value.description,
+        finStage: this.formGroup.value.dateFin,
+        numEtudiant: this.formGroup.value.etudiant,
+        numProf: this.formGroup.value.professeur,
+        observationStage: this.formGroup.value.observation,
+        typeStage: this.formGroup.value.type,
+        numStage: 0,
+        numEntreprise: this.formGroup.value.entreprise,
+      };
+      this.stageService.createStage(stage).subscribe();
+    } else {
+      //TODO faire un truc en cas d'erreur
+    }
+
   }
 
 

@@ -28,10 +28,13 @@ export class LogInComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.value.typeConnexion === "Etudiant") {
       this.loginService.isEtudiantExistant(this.loginForm.value.login, this.loginForm.value.password).subscribe(value => {
-        this.loginService.isConnected = value
+        this.loginService.isConnected = value;
+        console.log(value)
         if (value) {
           this.loginService.login = this.loginForm.value.login;
           this.router.navigate(['accueil']);
+        } else {
+          alert("Erreur d'authentification - Veuillez vérifier vos identifiants de connexion")
         }
       });
     } else {

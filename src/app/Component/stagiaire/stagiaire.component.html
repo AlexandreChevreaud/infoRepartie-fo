@@ -36,7 +36,7 @@
     <div class="form-example">
       <label class="required">Classe </label>
       <select formControlName="classe" required>
-        <option [ngValue]="null" disabled>Classe</option>
+        <option [selected]="true" selected disabled [ngValue]="null">Choisissez la classe</option>
         <option *ngFor="let cla of this.classes" [ngValue]="cla.numClasse">
           {{ cla.nomClasse }}
         </option>

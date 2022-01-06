@@ -2,26 +2,28 @@
   <h1>Gestion des stages</h1>
   <p>Vous n'êtes pas connecté.<br>Identifiez-vous pour poursuivre la navigation</p>
 </div>
-<div class="connection center deux_colonnes">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <label for="login">Login : </label>
-    <input type="text" formControlName="login"
-           name="login" id="login" required>
+<div style="padding-left: 33%;">
+  <div class="connection center deux_colonnes">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="login">Login : </label>
+      <input type="text" formControlName="login"
+             name="login" id="login" required>
 
-    <label for="password">Mot de passe : </label>
-    <input type="password" formControlName="password"
-           name="password" id="password" required>
+      <label for="password">Mot de passe : </label>
+      <input type="password" formControlName="password"
+             name="password" id="password" required>
 
-    <label for="typeConnexion1">Etudiant</label>
-    <input type="radio" id="typeConnexion1"
-           formControlName="typeConnexion"
-           name="typeConnexion" value="Etudiant">
+      <label for="typeConnexion1">Etudiant</label>
+      <input type="radio" id="typeConnexion1"
+             formControlName="typeConnexion"
+             name="typeConnexion" value="Etudiant">
 
-    <label for="typeConnexion2">Professeur</label>
-    <input type="radio" id="typeConnexion2"
-           formControlName="typeConnexion"
-           name="typeConnexion" value="courrier">
+      <label for="typeConnexion2">Professeur</label>
+      <input type="radio" id="typeConnexion2"
+             formControlName="typeConnexion"
+             name="typeConnexion" value="courrier">
 
-    <input type="submit" value="Connexion">
-  </form>
+      <input type="submit" value="Connexion">
+    </form>
+  </div>
 </div>

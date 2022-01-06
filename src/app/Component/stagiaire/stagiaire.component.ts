@@ -29,7 +29,7 @@ export class StagiaireComponent implements OnInit {
     username: '',
     pass: '',
     dateObtention: Date.now(),
-    classe: 0,
+    classe: null,
 
   });
 
@@ -47,7 +47,7 @@ export class StagiaireComponent implements OnInit {
     if (this.loginForm.valid) {
       let etu: Etudiant =
         {
-          numEtudiant: 0,
+          numEtudiant: undefined,
           nomEtudiant: this.loginForm.value.nom,
           prenomEtudiant: this.loginForm.value.prenom,
           anneeObtention: this.loginForm.value.dateObtention,
@@ -58,7 +58,7 @@ export class StagiaireComponent implements OnInit {
         };
       this.etudiantService.createEtudiant(etu).subscribe();
     } else {
-      //TODO Faire un truc en cas d'erreur + mettre le message
+      //TODO Mettre en rouge les champs quand il est en erreur
     }
   }
 }

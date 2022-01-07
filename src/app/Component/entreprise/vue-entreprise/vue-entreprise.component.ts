@@ -26,14 +26,29 @@ export class VueEntrepriseComponent implements OnInit {
   specialites: Specialite[] = [];
   specEntreprises: SpecEntreprise[] = [];
   isProf: boolean = false;
+  displayNameSelect: string[] = [];
+  name: string = "";
+
+  displayColumn: Record<string, boolean> =
+    {
+      "Numéro de l\'entreprise": true,
+      "Nom de l\'entreprise": true,
+      "Nom du contact": true,
+      "Nom du responsable": true,
+      "Adresse": false,
+      "Telephone de l\'entreprise": false,
+      "Fax de l\'entreprise": false,
+      "Email": false,
+      "Observation": false,
+      "Site de l\'entreprise": false,
+      "En activite": false
+    }
 
   ngOnInit(): void {
     if (!this.logInService.isConnected) {
       this.router.navigate(['login'])
     }
     this.isProf = this.logInService.isProfesseur;
-
-    this.logInService.isProfesseur
 
     this.entrepriseService.getAllEntreprises().subscribe((value => {
       this.entreprises = value;
@@ -45,6 +60,7 @@ export class VueEntrepriseComponent implements OnInit {
     this.specialiteService.getAllSpecialite().subscribe((value => {
       this.specialites = value;
     }));
+    this.displayNameSelect = this.updateDisplay();
 
   }
 
@@ -89,5 +105,31 @@ export class VueEntrepriseComponent implements OnInit {
 
   updateEnteprise(ent: Entreprise) {
     this.router.navigate(['inscription', {"data": ent}]);
+  }
+
+  changeDisplayColumn(name: string) {
+    this.displayColumn[name] = !this.displayColumn[name];
+    this.displayNameSelect = this.updateDisplay();
+    console.log(this.displayNameSelect);
+
+  }
+
+  selectChange($event: any) {
+    this.name = $event.target.value;
+  }
+
+  updateDisplay(): string[] {
+
+    let tab: string[] = [];
+    var list = (Object.keys(this.displayColumn) as Array<string>);
+
+    list.forEach((value => {
+      if (!this.displayColumn[value]) {
+        tab.push(value);
+      }
+    }));
+    console.log(this.displayNameSelect);
+    console.log(tab);
+    return tab;
   }
 }

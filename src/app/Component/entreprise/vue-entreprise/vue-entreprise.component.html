@@ -6,56 +6,124 @@
     Ajouter une entreprise
   </span>
 </button>
+{{this.displayNameSelect}}
+{{this.displayColumn}}
 <hr>
-<table class="list">
-  <thead>
-  <tr class="list">
+<div>
+  <select (change)="this.selectChange($event)">
+    <option [selected]="true" selected disabled [ngValue]="null">Choisissez la colonne</option>
+
+    <option *ngFor="let name of this.displayNameSelect">
+      {{name }}
+    </option>
+  </select>
+  <button (click)="changeDisplayColumn(this.name)">Ajouter la colonne selectionné</button>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
     <th>
-      <span class="list">
+      <span>
         Opération
       </span>
     </th>
-    <th>
-      Entreprise
+    <th *ngIf="displayColumn['Nom de l\'entreprise']">
+      <span>
+        Nom de l'entreprise
+      </span>
     </th>
-    <th>
-      Responsable
+    <th *ngIf="displayColumn['Numéro de l\'entreprise']">
+      <span>
+        Numéro de l'entreprise
+      </span>
+      <button (click)=" changeDisplayColumn('Numéro de l\'entreprise')"> Moins</button>
     </th>
-    <th>
-      Adresse
+    <th *ngIf="displayColumn['Nom du contact']">
+      <span>
+        Nom du contact
+      </span>
+      <button (click)="changeDisplayColumn('Nom du contact')"> Moins</button>
     </th>
-    <th>
-      Site
+    <th *ngIf="displayColumn['Nom du responsable']">
+      <span>
+        Nom du responsable
+      </span>
+      <button (click)="changeDisplayColumn('Nom du responsable')"> Moins</button>
     </th>
-    <th>
-      Specialité
+    <th *ngIf="displayColumn['Adresse']">
+      <span>
+        Adresse
+      </span>
+      <button (click)="changeDisplayColumn('Adresse')"> Moins</button>
     </th>
-  </tr>
+    <th *ngIf="displayColumn['Telephone de l\'entreprise']">
+      <span>
+        Téléphone
+      </span>
+      <button (click)="changeDisplayColumn('Telephone de l\'entreprise')"> Moins</button>
+    </th>
+    <th *ngIf="displayColumn['Fax de l\'entreprise']">
+      <span>
+        Fax
+      </span>
+      <button (click)="changeDisplayColumn('Fax de l\'entreprise')"> Moins</button>
+    </th>
+    <th *ngIf="displayColumn['Email']">
+      <span>
+        Email
+      </span>
+      <button (click)="changeDisplayColumn('Email')"> Moins</button>
+    </th>
+    <th *ngIf="displayColumn['Observation']">
+      <span>
+        Observation
+      </span>
+      <button (click)="changeDisplayColumn('Observation')"> Moins</button>
+    </th>
+    <th *ngIf="displayColumn['Site de l\'entreprise']">
+      <span>
+        Site
+      </span>
+      <button (click)="changeDisplayColumn('Site de l\'entreprise')"> Moins</button>
+    </th>
+    <th *ngIf="displayColumn['En activite']">
+      <span>
+        En activité
+      </span>
+      <button (click)="changeDisplayColumn('En activite')"> Moins</button>
+    </th>
   </thead>
   <tbody>
   <ng-container *ngFor="let ent of entreprises">
-    <tr>
+    <tr scope="row">
       <td>
-        <a class="icon_voir fake_bouton" (click)="redirectToDetailsEntreprise()"></a>
-        <a class="icon_inscrire fake_bouton" (click)="redirectToInscription()"></a>
+        <a (click)="redirectToDetailsEntreprise()"></a>
+        <a (click)="redirectToInscription()"></a>
         <div *ngIf="isProf">
-          <a class="icon_modifier fake_bouton" (click)="updateEnteprise(ent)">
+          <a (click)="updateEnteprise(ent)">
           </a>
-          <a class="icon_supprimer fake_bouton" (click)="supprimerEntreprise(ent.numEntreprise)">
+          <a (click)="supprimerEntreprise(ent.numEntreprise)">
           </a>
         </div>
       </td>
-      <td>{{ent.raisonSociale}}</td>
-      <td>{{ent.nomResp}}</td>
-      <td>{{ent.rueEntreprise + ' ' + ent.cpEntreprise + ' ' + ent.villeEntreprise}}</td>
-      <td>
+      <td *ngIf="displayColumn['Nom de l\'entreprise']">{{ent.raisonSociale}}</td>
+      <td *ngIf="displayColumn['Numéro de l\'entreprise']">{{ent.numEntreprise}}</td>
+      <td *ngIf="displayColumn['Nom du contact']">{{ent.nomContact}}</td>
+      <td *ngIf="displayColumn['Nom du responsable']">{{ent.nomResp}}</td>
+      <td
+        *ngIf="displayColumn['Adresse']">{{ent.rueEntreprise + ' ' + ent.cpEntreprise + ' ' + ent.villeEntreprise}}</td>
+      <td *ngIf="displayColumn['Telephone de l\'entreprise']">{{ent.telEntreprise}}</td>
+      <td *ngIf="displayColumn['Fax de l\'entreprise']">{{ent.faxEntreprise}}</td>
+      <td *ngIf="displayColumn['Email']">{{ent.Email}}</td>
+      <td *ngIf="displayColumn['Observation']">{{ent.observation}}</td>
+      <td *ngIf="displayColumn['Site de l\'entreprise']">
         <button *ngIf="ent.siteEntreprise!=''" class="">
-          <a [href]="ent.siteEntreprise" class="fake_bouton icon_website">
+          <a [href]="ent.siteEntreprise">
 
           </a>
         </button>
       </td>
-      <td><span>{{getSpecialite(ent.numEntreprise)}}</span></td>
+      <td><span>{{getSpecialite(ent.enActivite)}}</span></td>
 
     </tr>
 

@@ -5,6 +5,10 @@ import {EntrepriseService} from "../../../Services/EntrepriseService";
 import {Entreprise} from "../../../Models/Entreprise";
 import {Specialite} from "../../../Models/Specialite";
 import {SpecialiteService} from "../../../Services/SpecialiteService";
+import {StageService} from "../../../Services/StageService";
+import {Stage} from "../../../Models/Stage";
+import {Etudiant} from "../../../Models/Etudiant";
+import {EtudiantService} from "../../../Services/EtudiantService";
 
 @Component({
   selector: 'app-details-enteprise',
@@ -17,12 +21,16 @@ export class DetailsEntepriseComponent implements OnInit {
   //TODO check ca
   specEntreprise: string = "";
   specialites: Specialite[] = [];
+  stages: Stage[] = [];
+  etudiants: Etudiant[] = [];
 
 
   constructor(private router: Router,
               private logInService: LogInService,
               private entrepriseService: EntrepriseService,
               private specialiteService: SpecialiteService,
+              private stageService: StageService,
+              private etudiantService: EtudiantService,
               private route: ActivatedRoute,
   ) {
 
@@ -35,14 +43,31 @@ export class DetailsEntepriseComponent implements OnInit {
         this.specialites = value;
       }));
       this.entrepriseService.getEntrepriseAndSpecById(id).subscribe(value => {
-        console.log(value);
         this.entreprise = value.entreprise;
         let specEntreprises = value.specEntreprises;
         value.specEntreprises.forEach((item) => {
           this.specEntreprise += this.specialites.find(x => x.numSpec == item.numSpec)?.libelle + " " ?? "";
         });
       });
+
+      this.stageService.getStageByNumEntreprise(id).subscribe((value => {
+        this.stages = value;
+        console.log(value);
+      }))
+
+      this.etudiantService.getAllEtudiant().subscribe(value => {
+        this.etudiants = value;
+      });
     }
     //voir dans entreprise creation
+  }
+
+  getEtudiantNameById(id: number): string {
+    var etu = this.etudiants.find(x => x.numEtudiant == id);
+    return etu?.nomEtudiant + " " + etu?.prenomEtudiant
+  }
+
+  redirectToUpdateStage(stage: Stage) {
+
   }
 }

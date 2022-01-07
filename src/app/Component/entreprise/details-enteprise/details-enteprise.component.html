@@ -44,3 +44,44 @@
     </div>
   </div>
 </div>
+<hr>
+<h1>Stage</h1>
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th>
+      <span>
+        Opération
+      </span>
+    </th>
+    <th>
+      <span>
+        Etudiant
+      </span>
+    </th>
+    <th>
+      <span>
+        Projet
+      </span>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngFor="let stage of stages">
+    <tr>
+      <td>
+        <button class="btn border-dark four-buttons" (click)="redirectToUpdateStage(stage)"><i
+          class="fas fa-pencil-alt"></i></button>
+      </td>
+      <td>
+        <span>{{getEtudiantNameById(stage.numEtudiant)}}</span>
+      </td>
+      <td>
+        <span>{{stage.descProjet}}</span>
+
+      </td>
+    </tr>
+  </ng-container>
+  </tbody>
+
+</table>

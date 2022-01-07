@@ -17,4 +17,8 @@ export class StageService {
   createStage(stage: Stage): Observable<Stage> {
     return this.http.post<Stage>(this.url + this.SLASH + "create", stage);
   }
+
+  getStageByNumEntreprise(id: number): Observable<Array<Stage>> {
+    return this.http.get<Array<Stage>>(this.url + this.SLASH + "bynumentreprise" + this.SLASH + id);
+  }
 }

@@ -23,6 +23,7 @@ export class VueEntrepriseComponent implements OnInit {
   }
 
   entreprises: Entreprise[] = [];
+  entreprisesRecherche: Entreprise[] = [];
   specialites: Specialite[] = [];
   specEntreprises: SpecEntreprise[] = [];
   isProf: boolean = false;
@@ -52,6 +53,7 @@ export class VueEntrepriseComponent implements OnInit {
 
     this.entrepriseService.getAllEntreprises().subscribe((value => {
       this.entreprises = value;
+      this.entreprisesRecherche = value;
     }));
     this.specEntrepriseService.getAllSpecEnterprise().subscribe((value => {
       this.specEntreprises = value;
@@ -62,6 +64,7 @@ export class VueEntrepriseComponent implements OnInit {
     }));
     this.displayNameSelect = [];
     this.displayNameSelect = this.updateDisplay();
+
 
   }
 
@@ -119,7 +122,6 @@ export class VueEntrepriseComponent implements OnInit {
   }
 
   updateDisplay(): string[] {
-
     let tab: string[] = [];
     var list = (Object.keys(this.displayColumn) as Array<string>);
 
@@ -129,5 +131,15 @@ export class VueEntrepriseComponent implements OnInit {
       }
     }));
     return tab;
+  }
+
+  recherche(event: Event) {
+    this.entreprisesRecherche = []
+    let recherche = (event.target as HTMLInputElement).value;
+    this.entreprises.forEach(value => {
+      if (value.raisonSociale.toLowerCase().startsWith(recherche.toLowerCase(), 0)) {
+        this.entreprisesRecherche.push(value)
+      }
+    });
   }
 }

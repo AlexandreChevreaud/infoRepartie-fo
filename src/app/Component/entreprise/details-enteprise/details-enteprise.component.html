@@ -1,0 +1,87 @@
+<hr>
+<h1>Entrée</h1>
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        <h1>Informations</h1>
+      </div>
+      <div class="card-body">
+        <span>Nom de l'entreprise : {{entreprise.raisonSociale}}</span><br>
+        <span>Nom du contact : {{entreprise.nomContact}}</span><br>
+        <span>Nom du responsable : {{entreprise.nomResp}}</span><br>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        <h1>Divers</h1>
+      </div>
+      <div class="card-body">
+        <span>Observation : {{entreprise.observation}}</span><br>
+        <span>Url du site : {{entreprise.siteEntreprise}}</span><br>
+        <span>Nom du responsable : {{entreprise.nomResp}}</span><br>
+        <span>Spécialite : {{specEntreprise}}</span><br>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row pt-2">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-header">
+        <h1>Contact</h1>
+      </div>
+      <div class="card-body">
+        <span>Rue : {{entreprise.rueEntreprise}}</span><br>
+        <span>Code Postal: {{entreprise.cpEntreprise}}</span><br>
+        <span>Ville : {{entreprise.villeEntreprise}}</span><br>
+        <span>Téléphone : {{entreprise.telEntreprise}}</span><br>
+        <span>Fax : {{entreprise.faxEntreprise}}</span><br>
+        <span>Email : {{entreprise.email}}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<h1>Stage</h1>
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th>
+      <span>
+        Opération
+      </span>
+    </th>
+    <th>
+      <span>
+        Etudiant
+      </span>
+    </th>
+    <th>
+      <span>
+        Projet
+      </span>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngFor="let stage of stages">
+    <tr>
+      <td>
+        <button class="btn border-dark four-buttons" (click)="redirectToUpdateStage(stage)"><i
+          class="fas fa-pencil-alt"></i></button>
+      </td>
+      <td>
+        <span>{{getEtudiantNameById(stage.numEtudiant)}}</span>
+      </td>
+      <td>
+        <span>{{stage.descProjet}}</span>
+
+      </td>
+    </tr>
+  </ng-container>
+  </tbody>
+
+</table>

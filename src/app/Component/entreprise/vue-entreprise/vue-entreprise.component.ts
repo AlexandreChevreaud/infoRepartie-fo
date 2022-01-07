@@ -87,8 +87,9 @@ export class VueEntrepriseComponent implements OnInit {
     this.router.navigate(['creationentreprise']);
   }
 
-  redirectToDetailsEntreprise() {
-    this.router.navigate(['detailsentreprise']);
+  redirectToDetailsEntreprise(ent: Entreprise) {
+    console.log(ent.numEntreprise);
+    this.router.navigate(['detailsentreprise'], {queryParams: {numEntreprise: ent.numEntreprise}});
 
   }
 

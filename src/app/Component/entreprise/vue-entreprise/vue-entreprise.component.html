@@ -146,7 +146,7 @@
         *ngIf="displayColumn['Adresse']">{{ent.rueEntreprise + ' ' + ent.cpEntreprise + ' ' + ent.villeEntreprise}}</td>
       <td *ngIf="displayColumn['Telephone de l\'entreprise']">{{ent.telEntreprise}}</td>
       <td *ngIf="displayColumn['Fax de l\'entreprise']">{{ent.faxEntreprise}}</td>
-      <td *ngIf="displayColumn['Email']">{{ent.Email}}</td>
+      <td *ngIf="displayColumn['Email']">{{ent.email}}</td>
       <td *ngIf="displayColumn['Observation']">{{ent.observation}}</td>
       <td *ngIf="displayColumn['Site de l\'entreprise']">
         <button *ngIf="ent.siteEntreprise!=''" class="">

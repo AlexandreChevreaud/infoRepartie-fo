@@ -49,6 +49,10 @@ export class EntrepriseCreationComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (!this.logInService.isConnected) {
+      this.router.navigate(['login'])
+    }
+
     this.specService.getAllSpecialite().subscribe((value => {
       this.specialites = value;
     }))

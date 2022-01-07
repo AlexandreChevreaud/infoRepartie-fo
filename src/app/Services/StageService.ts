@@ -15,7 +15,6 @@ export class StageService {
   }
 
   createStage(stage: Stage): Observable<Stage> {
-    console.log("test2");
     return this.http.post<Stage>(this.url + this.SLASH + "create", stage);
   }
 }

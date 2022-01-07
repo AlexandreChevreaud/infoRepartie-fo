@@ -93,7 +93,7 @@ export class InscriptionComponent implements OnInit {
       };
       this.stageService.createStage(stage).subscribe();
     } else {
-      //TODO faire un truc en cas d'erreur
+      alert("Erreur - Merci de vérifier les données des champs en rouge")
     }
 
   }

@@ -100,7 +100,6 @@
     </div>
   </div>
 
-  <input type="submit" value="Créer le stage">
-
-
+  <input type="submit" value="Créer le stage" *ngIf="!isUpdate">
+  <input type="submit" value="Modifier le stage" *ngIf="isUpdate">
 </form>

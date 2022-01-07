@@ -88,6 +88,6 @@ export class VueEntrepriseComponent implements OnInit {
   }
 
   updateEnteprise(ent: Entreprise) {
-    this.router.navigate(['inscription', {"data": ent}]);
+    this.router.navigate(['creationentreprise'], {queryParams: {numEntreprise: ent.numEntreprise}});
   }
 }

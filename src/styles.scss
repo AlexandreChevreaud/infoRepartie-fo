@@ -345,19 +345,11 @@ input[type="submit"]:hover, input[type="button"]:hover, .large_bouton_operation 
   display: inline;
 }
 
-.btn {
-  background-color: #183080;
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 3px 4px; /* Some padding */
-  font-size: 10px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
+.four-buttons {
+  width: 50px;
 }
 
-/* Darker background on mouse-over */
-.btn:hover {
-  background-color: RoyalBlue;
-}
+
 
 
 

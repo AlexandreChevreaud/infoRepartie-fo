@@ -9,7 +9,7 @@ export interface Entreprise {
   villeEntreprise: string;
   telEntreprise: string;
   faxEntreprise: string;
-  Email: string;
+  email: string;
   observation: string;
   siteEntreprise: string;
   niveau: string;

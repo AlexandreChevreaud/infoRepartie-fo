@@ -60,6 +60,7 @@ export class VueEntrepriseComponent implements OnInit {
     this.specialiteService.getAllSpecialite().subscribe((value => {
       this.specialites = value;
     }));
+    this.displayNameSelect = [];
     this.displayNameSelect = this.updateDisplay();
 
   }
@@ -110,8 +111,7 @@ export class VueEntrepriseComponent implements OnInit {
   changeDisplayColumn(name: string) {
     this.displayColumn[name] = !this.displayColumn[name];
     this.displayNameSelect = this.updateDisplay();
-    console.log(this.displayNameSelect);
-
+    this.name = this.displayNameSelect[0];
   }
 
   selectChange($event: any) {
@@ -128,8 +128,6 @@ export class VueEntrepriseComponent implements OnInit {
         tab.push(value);
       }
     }));
-    console.log(this.displayNameSelect);
-    console.log(tab);
     return tab;
   }
 }

@@ -6,13 +6,10 @@
     Ajouter une entreprise
   </span>
 </button>
-{{this.displayNameSelect}}
-{{this.displayColumn}}
 <hr>
 <div>
   <select (change)="this.selectChange($event)">
     <option [selected]="true" selected disabled [ngValue]="null">Choisissez la colonne</option>
-
     <option *ngFor="let name of this.displayNameSelect">
       {{name }}
     </option>
@@ -97,13 +94,12 @@
   <ng-container *ngFor="let ent of entreprises">
     <tr scope="row">
       <td>
-        <a (click)="redirectToDetailsEntreprise()"></a>
-        <a (click)="redirectToInscription()"></a>
+        <button class="btn" (click)="redirectToDetailsEntreprise()"><i class="fa fa-home"></i> Voir</button>
+        <button class="btn" (click)="redirectToInscription()"><i class="fa fa-home"></i> Inscription</button>
         <div *ngIf="isProf">
-          <a (click)="updateEnteprise(ent)">
-          </a>
-          <a (click)="supprimerEntreprise(ent.numEntreprise)">
-          </a>
+          <button class="btn" (click)="updateEnteprise(ent)"><i class="fa fa-home"></i> Update</button>
+          <button class="btn" (click)="supprimerEntreprise(ent.numEntreprise)"><i class=" fa fa-home"></i> Delete
+          </button>
         </div>
       </td>
       <td *ngIf="displayColumn['Nom de l\'entreprise']">{{ent.raisonSociale}}</td>

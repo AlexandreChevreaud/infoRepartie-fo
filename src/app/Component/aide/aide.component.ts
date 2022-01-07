@@ -11,9 +11,11 @@ export class AideComponent implements OnInit {
 
 
   constructor() {
+
   }
 
   ngOnInit(): void {
+    
   }
 
 }

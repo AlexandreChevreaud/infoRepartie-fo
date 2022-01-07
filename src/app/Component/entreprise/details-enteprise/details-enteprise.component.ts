@@ -18,7 +18,6 @@ import {EtudiantService} from "../../../Services/EtudiantService";
 export class DetailsEntepriseComponent implements OnInit {
 
   entreprise = <Entreprise>{};
-  //TODO check ca
   specEntreprise: string = "";
   specialites: Specialite[] = [];
   stages: Stage[] = [];
@@ -36,7 +35,12 @@ export class DetailsEntepriseComponent implements OnInit {
 
   }
 
+//TODO enlever le scroll horizontal
   ngOnInit(): void {
+    if (!this.logInService.isConnected) {
+      this.router.navigate(['login'])
+    }
+
     if (this.route.snapshot.queryParams["numEntreprise"]) {
       let id: number = <number>this.route.snapshot.queryParams["numEntreprise"];
       this.specialiteService.getAllSpecialite().subscribe((value => {
@@ -52,7 +56,6 @@ export class DetailsEntepriseComponent implements OnInit {
 
       this.stageService.getStageByNumEntreprise(id).subscribe((value => {
         this.stages = value;
-        console.log(value);
       }))
 
       this.etudiantService.getAllEtudiant().subscribe(value => {
@@ -68,6 +71,6 @@ export class DetailsEntepriseComponent implements OnInit {
   }
 
   redirectToUpdateStage(stage: Stage) {
-
+    //TODO update des stages
   }
 }

@@ -58,8 +58,7 @@ export class StagiaireComponent implements OnInit {
         };
       this.etudiantService.createEtudiant(etu).subscribe();
     } else {
-      console.log(this.loginForm.errors)
-      //TODO Mettre en rouge les champs quand il est en erreur
+      alert("Erreur - Merci de vérifier les données des champs en rouge")
     }
   }
 }

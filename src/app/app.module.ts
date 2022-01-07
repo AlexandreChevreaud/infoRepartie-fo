@@ -14,6 +14,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { VueEntrepriseComponent } from './Component/entreprise/vue-entreprise/vue-entreprise.component';
 import { EntrepriseCreationComponent } from './Component/entreprise/entreprise-creation/entreprise-creation.component';
+import { DetailsEntepriseComponent } from './Component/entreprise/details-enteprise/details-enteprise.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { EntrepriseCreationComponent } from './Component/entreprise/entreprise-c
     EntrepriseCreationComponent,
     VueEntrepriseComponent,
     EntrepriseCreationComponent,
+    DetailsEntepriseComponent,
 
   ],
   imports: [

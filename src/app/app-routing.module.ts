@@ -8,6 +8,7 @@ import {AideComponent} from "./Component/aide/aide.component";
 import {InscriptionComponent} from "./Component/inscription/inscription.component";
 import {EntrepriseCreationComponent} from "./Component/entreprise/entreprise-creation/entreprise-creation.component";
 import {VueEntrepriseComponent} from "./Component/entreprise/vue-entreprise/vue-entreprise.component";
+import {DetailsEntepriseComponent} from "./Component/entreprise/details-enteprise/details-enteprise.component";
 
 const routes: Routes = [
   {path: 'accueil', component: accueilComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'inscription', component: InscriptionComponent},
   {path: 'creationentreprise', component: EntrepriseCreationComponent},
   {path: 'vue', component: VueEntrepriseComponent},
+  {path: 'detailsentreprise', component: DetailsEntepriseComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
 
 ];

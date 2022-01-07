@@ -7,9 +7,9 @@
         <h1>Informations</h1>
       </div>
       <div class="card-body">
-        <p>Nom de l'entreprise : {{entreprise.raisonSociale}}</p>
-        <p>Nom du contact : {{entreprise.nomContact}}</p>
-        <p>Nom du responsable : {{entreprise.nomResp}}</p>
+        <span>Nom de l'entreprise : {{entreprise.raisonSociale}}</span><br>
+        <span>Nom du contact : {{entreprise.nomContact}}</span><br>
+        <span>Nom du responsable : {{entreprise.nomResp}}</span><br>
       </div>
     </div>
   </div>
@@ -19,9 +19,10 @@
         <h1>Divers</h1>
       </div>
       <div class="card-body">
-        <p>Observation : {{entreprise.observation}}</p>
-        <p>Url du site : {{entreprise.siteEntreprise}}</p>
-        <p>Nom du responsable : {{entreprise.nomResp}}</p>
+        <span>Observation : {{entreprise.observation}}</span><br>
+        <span>Url du site : {{entreprise.siteEntreprise}}</span><br>
+        <span>Nom du responsable : {{entreprise.nomResp}}</span><br>
+        <span>Spécialite : {{specEntreprise}}</span><br>
       </div>
     </div>
   </div>
@@ -29,8 +30,16 @@
 <div class="row pt-2">
   <div class="col-6">
     <div class="card">
-      <div class="card-body">
+      <div class="card-header">
         <h1>Contact</h1>
+      </div>
+      <div class="card-body">
+        <span>Rue : {{entreprise.rueEntreprise}}</span><br>
+        <span>Code Postal: {{entreprise.cpEntreprise}}</span><br>
+        <span>Ville : {{entreprise.villeEntreprise}}</span><br>
+        <span>Téléphone : {{entreprise.telEntreprise}}</span><br>
+        <span>Fax : {{entreprise.faxEntreprise}}</span><br>
+        <span>Email : {{entreprise.email}}</span>
       </div>
     </div>
   </div>

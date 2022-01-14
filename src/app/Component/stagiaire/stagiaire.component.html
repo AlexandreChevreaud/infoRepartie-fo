@@ -1,51 +1,52 @@
 <!--TODO : gestion required + error + retour reponse http-->
-<form action="" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
-  <div class="form-example">
-    <label>Informations concernant l'étudiant </label>
+<table>
+  <form action="" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <thead style="background-color: #3050F0">
+    <tr>
+      <th><label class="text-white">Informations concernant l'étudiant :</label></th>
+      <th></th>
+    </tr>
+    </thead>
     <!-- Nom  -->
-    <div class="form-example">
-      <label class="required">Nom </label>
-      <input mdbValidate type="text" name="nom" required formControlName="nom" ng-model="nom"/>
-    </div>
+    <tr>
+      <th><label class="required">Nom :</label></th>
+      <th><input mdbValidate type="text" name="nom" required formControlName="nom" ng-model="nom"/></th>
+    </tr>
 
     <!-- Prenom  -->
-    <div class="form-example">
-      <label class="required">Prenom </label>
-      <input type="text" name="prenom" required formControlName="prenom"/>
-    </div>
+    <tr>
+      <th><label class="required">Prenom :</label></th>
+      <th><input type="text" name="prenom" required formControlName="prenom"/></th>
+    </tr>
 
     <!-- username  -->
-    <div class="form-example">
-      <label class="required">Nom d'utilisateur (8 caractères) </label>
-      <input type="text" name="username" minlength="8" maxlength="8" required formControlName="username"/>
-    </div>
+    <tr>
+      <th><label class="required">Nom d'utilisateur (8 caractères) :</label></th>
+      <th><input type="text" name="username" minlength="8" maxlength="8" required formControlName="username"/></th>
+    </tr>
 
     <!-- password  -->
-    <div class="form-example">
-      <label class="required">Mot de passe (entre 8 et 30 caractères) </label>
-      <input type="text" minlength="8" maxlength="30" name="pass" required formControlName="pass"/>
-    </div>
+    <tr>
+      <th><label class="required">Mot de passe (entre 8 et 30 caractères) :</label></th>
+      <th><input type="text" minlength="8" maxlength="30" name="pass" required formControlName="pass"/></th>
+    </tr>
 
     <!-- Nom  -->
-    <div class="form-example">
-      <label>Date d'obtention du BTS </label>
-      <input type="date" name="dateObtention" formControlName="dateObtention"/>
-    </div>
+    <tr>
+      <th><label>Date d'obtention du BTS :</label></th>
+      <th><input type="date" name="dateObtention" formControlName="dateObtention"/></th>
+    </tr>
 
     <!-- Classe  -->
-    <div class="form-example">
-      <label class="required">Classe </label>
-      <select formControlName="classe" required>
+    <tr>
+      <th><label class="required">Classe </label></th>
+      <th><select formControlName="classe" required>
         <option [selected]="true" selected disabled [ngValue]="null" n>Choisissez la classe</option>
         <option *ngFor="let cla of this.classes" [ngValue]="cla.numClasse">
           {{ cla.nomClasse }}
         </option>
-      </select>
-    </div>
-
-
+      </select></th>
+    </tr>
     <input type="submit" value="Créer l'étudiant">
-
-  </div>
-
-</form>
+  </form>
+</table>

@@ -8,6 +8,9 @@ import {SpecialiteService} from "../../../Services/SpecialiteService";
 import {Specialite} from "../../../Models/Specialite";
 import {SpecEntreprise} from "../../../Models/SpecEntreprise";
 
+//TODO Site dans le tableau
+
+
 @Component({
   selector: 'app-vue-entreprise',
   templateUrl: './vue-entreprise.component.html',
@@ -42,7 +45,7 @@ export class VueEntrepriseComponent implements OnInit {
       "Email": false,
       "Observation": false,
       "Site de l\'entreprise": false,
-      "En activite": false
+      "Specialite": false
     }
 
   ngOnInit(): void {

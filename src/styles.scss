@@ -349,8 +349,9 @@ input[type="submit"]:hover, input[type="button"]:hover, .large_bouton_operation 
   width: 50px;
 }
 
-
-
+.row {
+  --bs-gutter-x: 0;
+}
 
 
 input.ng-invalid, select.ng-invalid {

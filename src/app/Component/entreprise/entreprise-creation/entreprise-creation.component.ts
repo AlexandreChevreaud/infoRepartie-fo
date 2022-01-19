@@ -125,7 +125,5 @@ export class EntrepriseCreationComponent implements OnInit {
       alert("Erreur - Merci de vérifier les données des champs en rouge");
     }
 
-
-    //TODO attendre le retour du post l'entreprise pour get le num de l'entreprise (qui est genere par la base) et refaire un post dans la table specialité avec toutes les spécialité de l'entreprise
   }
 }

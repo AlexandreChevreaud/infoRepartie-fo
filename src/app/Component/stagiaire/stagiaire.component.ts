@@ -54,7 +54,7 @@ export class StagiaireComponent implements OnInit {
           login: this.loginForm.value.username,
           mdp: this.loginForm.value.pass,
           numClasse: this.loginForm.value.classe,
-          enActivite: 0, //TODO c'est quoi ca ?
+          enActivite: 1,
         };
       this.etudiantService.createEtudiant(etu).subscribe();
     } else {

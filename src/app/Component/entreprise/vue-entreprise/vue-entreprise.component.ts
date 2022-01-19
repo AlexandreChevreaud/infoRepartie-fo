@@ -9,7 +9,7 @@ import {Specialite} from "../../../Models/Specialite";
 import {SpecEntreprise} from "../../../Models/SpecEntreprise";
 
 //TODO Site dans le tableau
-
+//TODO SPECS
 
 @Component({
   selector: 'app-vue-entreprise',
@@ -68,20 +68,30 @@ export class VueEntrepriseComponent implements OnInit {
     this.displayNameSelect = [];
     this.displayNameSelect = this.updateDisplay();
 
-
   }
 
-  findSpecialiteNumber(numEntreprise: number | undefined): number {
-    return this.specEntreprises.find(x => x.numEntreprise == numEntreprise)?.numSpec ?? 0;
+  findSpecialiteNumber(numEntreprise: number | undefined): Array<SpecEntreprise> {
+    var num = <number>numEntreprise;
+    var a = this.specEntreprises.filter(x => x.numEntreprise == num);
+    return a;
   }
 
-  findSpecialite(numSpecialte: number): string {
-    return this.specialites.find(x => x.numSpec == numSpecialte)?.libelle ?? "";
+  findSpecialite(specs: Array<SpecEntreprise>): string {
+    var s = "";
+    specs.forEach((value => {
+      console.log(value);
+      s += this.specialites.find(x => x.numSpec == value.numSpec)?.libelle ?? "";
+      s += " ";
+    }));
+    return s;
   }
 
   getSpecialite(numEntreprise: number | undefined): string {
+    // console.log(numEntreprise);
     var a = this.findSpecialiteNumber(numEntreprise);
+    // console.log(a);
     var b = this.findSpecialite(a);
+    // console.log(b);
     return b;
   }
 

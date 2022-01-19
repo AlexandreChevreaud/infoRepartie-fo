@@ -157,11 +157,7 @@
       <td *ngIf="displayColumn['Email']">{{ent.email}}</td>
       <td *ngIf="displayColumn['Observation']">{{ent.observation}}</td>
       <td *ngIf="displayColumn['Site de l\'entreprise']">
-        <button *ngIf="ent.siteEntreprise!=''" class="">
-          <a [href]="ent.siteEntreprise">
-
-          </a>
-        </button>
+        <a [href]="ent.siteEntreprise"> <i class="fas fa-link"></i></a>
       </td>
       <td *ngIf="displayColumn['Specialite']"><span>{{getSpecialite(ent.numEntreprise)}}</span></td>
 

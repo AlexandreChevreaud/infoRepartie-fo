@@ -3,7 +3,7 @@ import {Entreprise} from "../../Models/Entreprise";
 import {Etudiant} from "../../Models/Etudiant";
 import {Professeur} from "../../Models/Professeur";
 import {TypeStage} from "../../Enums/TypeStage";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {LogInService} from "../../Services/LogInService";
 import {FormBuilder} from "@angular/forms";
 import {Stage} from "../../Models/Stage";
@@ -35,11 +35,11 @@ export class InscriptionComponent implements OnInit {
     type: null,
     description: '',
     observation: '',
-
   });
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
+              private route: ActivatedRoute,
               private logInService: LogInService,
               private profService: ProfesseurService,
               private etudiantService: EtudiantService,
@@ -66,6 +66,26 @@ export class InscriptionComponent implements OnInit {
       this.entreprises = value;
     });
 
+    if (this.route.snapshot.queryParams["numStage"]) {
+      let id: number = <number>this.route.snapshot.queryParams["numStage"]
+      this.stageService.getStage(id).subscribe(value => {
+        if (value) {
+          let debutStage = new Date(value.debutStage)
+          let finStage = new Date(value.finStage)
+          this.formGroup = this.formBuilder.group({
+            entreprise: value.numEntreprise,
+            etudiant: value.numEtudiant,
+            professeur: value.numProf,
+            dateDebut: '' + debutStage.getFullYear() + '-' + (debutStage.getMonth() < 10 ? '0' + debutStage.getMonth() : debutStage.getMonth()) + '-' + (debutStage.getDay() < 10 ? '0' + debutStage.getDay() : debutStage.getDay()),
+            dateFin: '' + finStage.getFullYear() + '-' + (finStage.getMonth() < 10 ? '0' + finStage.getMonth() : finStage.getMonth()) + '-' + (finStage.getDay() < 10 ? '0' + finStage.getDay() : finStage.getDay()),
+            type: value.typeStage.replace(/^./, value.typeStage[0].toUpperCase()),
+            description: value.descProjet,
+            observation: value.observationStage,
+          });
+        }
+      });
+    }
+
   }
 
   initStagetypes(): string[] {
@@ -79,6 +99,7 @@ export class InscriptionComponent implements OnInit {
 
 
   onSubmit() {
+    console.log(this.formGroup.value.dateDebut)
     if (this.formGroup.valid) {
       let stage: Stage = {
         debutStage: this.formGroup.value.dateDebut,

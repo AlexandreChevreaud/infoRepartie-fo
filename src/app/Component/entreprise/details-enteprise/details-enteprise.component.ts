@@ -71,6 +71,6 @@ export class DetailsEntepriseComponent implements OnInit {
   }
 
   redirectToUpdateStage(stage: Stage) {
-    //TODO update des stages
+    this.router.navigate(['inscription'], {queryParams: {numStage: stage.numStage}})
   }
 }

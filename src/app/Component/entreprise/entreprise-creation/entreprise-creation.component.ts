@@ -89,37 +89,42 @@ export class EntrepriseCreationComponent implements OnInit {
   //TODO faire le truc des specs
 
   onSubmit() {
-    let ent: Entreprise = {
-      numEntreprise: !this.isUpdate ? undefined : this.entreprise?.numEntreprise,
-      email: this.loginForm.value.mail,
-      niveau: this.loginForm.value.niveau,
-      nomResp: this.loginForm.value.nomResp,
-      observation: this.loginForm.value.obs,
-      cpEntreprise: this.loginForm.value.codePostal,
-      faxEntreprise: this.loginForm.value.fax,
-      nomContact: this.loginForm.value.nomContact,
-      raisonSociale: this.loginForm.value.nomEntreprise,
-      rueEntreprise: this.loginForm.value.rue,
-      siteEntreprise: this.loginForm.value.url,
-      telEntreprise: this.loginForm.value.tel,
-      villeEntreprise: this.loginForm.value.ville,
-      enActivite: 1
-    };
+    if (this.loginForm.valid) {
+      let ent: Entreprise = {
+        numEntreprise: !this.isUpdate ? undefined : this.entreprise?.numEntreprise,
+        email: this.loginForm.value.mail,
+        niveau: this.loginForm.value.niveau,
+        nomResp: this.loginForm.value.nomResp,
+        observation: this.loginForm.value.obs,
+        cpEntreprise: this.loginForm.value.codePostal,
+        faxEntreprise: this.loginForm.value.fax,
+        nomContact: this.loginForm.value.nomContact,
+        raisonSociale: this.loginForm.value.nomEntreprise,
+        rueEntreprise: this.loginForm.value.rue,
+        siteEntreprise: this.loginForm.value.url,
+        telEntreprise: this.loginForm.value.tel,
+        villeEntreprise: this.loginForm.value.ville,
+        enActivite: 1
+      };
 
 
-    this.entrepriseService.createEntreprise(ent).subscribe((value => {
-      let spec: Array<SpecEntreprise> = [];
-      this.loginForm.value.spec.forEach((item: number) => {
-        let s: SpecEntreprise = {
-          numSpec: item,
-          numEntreprise: value?.numEntreprise ?? 0
-        };
-        spec.push(s);
-      });
-      this.specEntrepriseService.createSpecEnterprise(spec).subscribe();
+      this.entrepriseService.createEntreprise(ent).subscribe((value => {
+        let spec: Array<SpecEntreprise> = [];
+        this.loginForm.value.spec.forEach((item: number) => {
+          let s: SpecEntreprise = {
+            numSpec: item,
+            numEntreprise: value?.numEntreprise ?? 0
+          };
+          spec.push(s);
+        });
+        this.specEntrepriseService.createSpecEnterprise(spec).subscribe();
 
 
-    }));
+      }));
+    } else {
+      alert("Erreur - Merci de vérifier les données des champs en rouge");
+    }
+
 
     //TODO attendre le retour du post l'entreprise pour get le num de l'entreprise (qui est genere par la base) et refaire un post dans la table specialité avec toutes les spécialité de l'entreprise
   }

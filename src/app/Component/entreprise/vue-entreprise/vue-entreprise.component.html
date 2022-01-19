@@ -5,7 +5,7 @@
         <input (change)="recherche($event)">
       </div>
       <div class="col-6">
-        <button class=" btn bg-black text-white" (click)="createEntreprise()">
+        <button class="btn bg-black text-white" (click)="createEntreprise()">
           <span>
             Ajouter une entreprise
           </span>
@@ -28,7 +28,6 @@
       </div>
       <div class="col-2">
         <button class="btn bg-black text-white" (click)="changeDisplayColumn(this.name)">Ajouter</button>
-
       </div>
     </div>
   </div>
@@ -50,13 +49,15 @@
       <span>
         Numéro de l'entreprise
       </span>
-      <button (click)=" changeDisplayColumn('Numéro de l\'entreprise')"><i class="fas fa-minus"></i></button>
+      <button class="btn bg-black" (click)=" changeDisplayColumn('Numéro de l\'entreprise')"><i
+        class="fas fa-minus text-white"></i></button>
     </th>
     <th *ngIf="displayColumn['Nom du contact']">
       <span>
         Nom du contact
       </span>
-      <button (click)="changeDisplayColumn('Nom du contact')"><i class="fas fa-minus"></i></button>
+      <button class="btn bg-black" (click)="changeDisplayColumn('Nom du contact')"><i
+        class="fas fa-minus text-white"></i></button>
     </th>
     <th *ngIf="displayColumn['Nom du responsable']">
       <span>
@@ -70,43 +71,52 @@
       <span>
         Adresse
       </span>
-      <button (click)="changeDisplayColumn('Adresse')"><i class="fas fa-minus"></i></button>
+      <button class="btn bg-black" (click)="changeDisplayColumn('Adresse')"><i class="fas fa-minus text-white"></i>
+      </button>
     </th>
     <th *ngIf="displayColumn['Telephone de l\'entreprise']">
       <span>
         Téléphone
       </span>
-      <button (click)="changeDisplayColumn('Telephone de l\'entreprise')"><i class="fas fa-minus"></i></button>
+      <button class="btn bg-black" (click)="changeDisplayColumn('Telephone de l\'entreprise')"><i
+        class="fas fa-minus text-white"></i></button>
     </th>
     <th *ngIf="displayColumn['Fax de l\'entreprise']">
       <span>
         Fax
       </span>
-      <button (click)="changeDisplayColumn('Fax de l\'entreprise')"><i class="fas fa-minus"></i></button>
+      <button class="btn bg-black" (click)="changeDisplayColumn('Fax de l\'entreprise')"><i
+        class="fas fa-minus text-white"></i>
+      </button>
     </th>
     <th *ngIf="displayColumn['Email']">
       <span>
         Email
       </span>
-      <button (click)="changeDisplayColumn('Email')"><i class="fas fa-minus"></i></button>
+      <button class="btn bg-black" (click)="changeDisplayColumn('Email')"><i class="fas fa-minus text-white"></i>
+      </button>
     </th>
     <th *ngIf="displayColumn['Observation']">
       <span>
         Observation
       </span>
-      <button (click)="changeDisplayColumn('Observation')"><i class="fas fa-minus"></i></button>
+      <button class="btn bg-black" (click)="changeDisplayColumn('Observation')"><i class="fas fa-minus text-white"></i>
+      </button>
     </th>
     <th *ngIf="displayColumn['Site de l\'entreprise']">
       <span>
         Site
       </span>
-      <button (click)="changeDisplayColumn('Site de l\'entreprise')"><i class="fas fa-minus"></i></button>
+      <button class="btn bg-black" (click)="changeDisplayColumn('Site de l\'entreprise')"><i
+        class="fas fa-minus text-white"></i>
+      </button>
     </th>
-    <th *ngIf="displayColumn['En activite']">
+    <th *ngIf="displayColumn['Specialite']">
       <span>
-        En activité
+       Specialité
       </span>
-      <button class="btn bg-black" (click)="changeDisplayColumn('En activite')"><i class="fas fa-minus"></i></button>
+      <button class="btn bg-black" (click)="changeDisplayColumn('Specialite')"><i class="fas fa-minus text-white"></i>
+      </button>
     </th>
   </thead>
   <tbody>
@@ -153,7 +163,7 @@
           </a>
         </button>
       </td>
-      <td><span>{{getSpecialite(ent.enActivite)}}</span></td>
+      <td *ngIf="displayColumn['Specialite']"><span>{{getSpecialite(ent.numEntreprise)}}</span></td>
 
     </tr>
 

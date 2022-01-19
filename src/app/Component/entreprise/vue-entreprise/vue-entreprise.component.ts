@@ -8,9 +8,6 @@ import {SpecialiteService} from "../../../Services/SpecialiteService";
 import {Specialite} from "../../../Models/Specialite";
 import {SpecEntreprise} from "../../../Models/SpecEntreprise";
 
-//TODO Site dans le tableau
-//TODO SPECS
-
 @Component({
   selector: 'app-vue-entreprise',
   templateUrl: './vue-entreprise.component.html',

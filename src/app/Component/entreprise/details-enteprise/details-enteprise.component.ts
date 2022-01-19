@@ -35,7 +35,6 @@ export class DetailsEntepriseComponent implements OnInit {
 
   }
 
-//TODO enlever le scroll horizontal
   ngOnInit(): void {
     if (!this.logInService.isConnected) {
       this.router.navigate(['login'])

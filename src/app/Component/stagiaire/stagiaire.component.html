@@ -1,4 +1,3 @@
-<!--TODO : gestion required + error + retour reponse http-->
 <form action="" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
   <thead style="background-color: #3050F0">
   <tr>
@@ -47,3 +46,13 @@
   </tr>
   <input type="submit" value="Créer l'étudiant">
 </form>
+
+<div class="row pt-2">
+  <div class="col-1"></div>
+  <div class="col-4">
+    <div class="alert alert-success" role="alert">
+      Les champs comportant le symbole <span class="required"></span> sont obligatoires !
+    </div>
+  </div>
+  <div class="col-1"></div>
+</div>

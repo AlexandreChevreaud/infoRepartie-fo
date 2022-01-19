@@ -7,15 +7,12 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AideComponent implements OnInit {
 
-  // TODO ajouter les icones dans les textes
-
-
   constructor() {
 
   }
 
   ngOnInit(): void {
-    
+
   }
 
 }

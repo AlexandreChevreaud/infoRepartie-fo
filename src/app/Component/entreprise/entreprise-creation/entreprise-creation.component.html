@@ -1,167 +1,165 @@
 <!--TODO : gestion required + error + retour reponse http + message vert en bas de la page -->
 <form action="" (ngSubmit)="onSubmit()" [formGroup]="loginForm">
-  <div class="container overflow-hidden">
-    <div class="row">
-      <thead>
-      <th class="row">
-        <div class="col-6" style="background-color: #3050F0">
-          <label class="text-white">Informations</label>
-        </div>
-      </th>
-      </thead>
-      <!-- Entreprise  -->
-      <tr class="row">
-        <td class="col-3">
-          <label class="required">Nom de l'entreprise </label>
-        </td>
-        <td class="col-3">
-          <input required type="text" name="nomEntreprise" formControlName="nomEntreprise">
-        </td>
-      </tr>
+  <div class="row">
+    <thead>
+    <th class="row">
+      <div class="col-6" style="background-color: #3050F0">
+        <label class="text-white">Informations</label>
+      </div>
+    </th>
+    </thead>
+    <!-- Entreprise  -->
+    <tr class="row">
+      <td class="col-3">
+        <label class="required">Nom de l'entreprise </label>
+      </td>
+      <td class="col-3">
+        <input required type="text" name="nomEntreprise" formControlName="nomEntreprise">
+      </td>
+    </tr>
 
-      <!-- nom du contact  -->
-      <tr class="row">
-        <td class="col-3">
-          <label>Nom du contact </label>
-        </td>
-        <td class="col-3">
-          <input type="text" name="nomContact" formControlName="nomContact">
-        </td>
-      </tr>
+    <!-- nom du contact  -->
+    <tr class="row">
+      <td class="col-3">
+        <label>Nom du contact </label>
+      </td>
+      <td class="col-3">
+        <input type="text" name="nomContact" formControlName="nomContact">
+      </td>
+    </tr>
 
-      <!-- nom du responsable   -->
-      <tr class="row">
-        <td class="col-3">
-          <label>Nom du responsable </label>
-        </td>
-        <td class="col-3">
-          <input type="text" name="nomResp" formControlName="nomResp">
-        </td>
-      </tr>
-
-
-      <thead>
-      <th class="row">
-        <div class="col-6" style="background-color: #3050F0">
-          <label class="text-white">Contact</label>
-        </div>
-      </th>
-      </thead>
-
-      <!-- rue  -->
-
-      <tr class="row">
-        <td class="col-3">
-          <label class="required">Rue </label>
-        </td>
-        <td class="col-3">
-          <input required type="text" name="rue" formControlName="rue"></td>
-      </tr>
-
-      <tr class="row">
-        <td class="col-3">
-          <label class="required">Code postal </label>
-        </td>
-        <td class="col-3">
-          <input required type="text" name="codePostal" formControlName="codePostal">
-        </td>
-      </tr>
-
-      <tr class="row">
-        <td class="col-3">
-          <label class="required">Ville </label>
-        </td>
-        <td class="col-3">
-          <input required type="text" name="ville" formControlName="ville">
-
-        </td>
-      </tr>
-
-      <tr class="row">
-        <td class="col-3">
-          <label class="required">Téléphone </label>
-        </td>
-        <td class="col-3">
-          <input required type="tel" name="tel" formControlName="tel">
-        </td>
-      </tr>
-
-      <tr class="row">
-        <td class="col-3">
-          <label>Fax </label>
-        </td>
-        <td class="col-3">
-          <input type="text" name="fax" formControlName="fax">
-        </td>
-      </tr>
-
-      <tr class="row">
-        <td class="col-3">
-          <label>Email </label>
-        </td>
-        <td class="col-3">
-          <input type="email" name="mail" formControlName="mail">
-        </td>
-      </tr>
-
-      <thead>
-      <th class="row">
-        <div class="col-6" style="background-color: #3050F0">
-          <label class="text-white">Divers</label>
-        </div>
-      </th>
-      </thead>
+    <!-- nom du responsable   -->
+    <tr class="row">
+      <td class="col-3">
+        <label>Nom du responsable </label>
+      </td>
+      <td class="col-3">
+        <input type="text" name="nomResp" formControlName="nomResp">
+      </td>
+    </tr>
 
 
-      <tr class="row">
-        <td class="col-3">
-          <label>Observation </label>
-        </td>
-        <td class="col-3">
-          <textarea name="obs" formControlName="obs"></textarea>
-        </td>
-      </tr>
+    <thead>
+    <th class="row">
+      <div class="col-6" style="background-color: #3050F0">
+        <label class="text-white">Contact</label>
+      </div>
+    </th>
+    </thead>
 
-      <tr class="row">
-        <td class="col-3">
-          <label>Url de site </label>
-        </td>
-        <td class="col-3">
-          <input type="url" name="url" formControlName="url">
-        </td>
-      </tr>
+    <!-- rue  -->
 
-      <tr class="row">
-        <td class="col-3">
-          <label class="required">Niveau </label>
-        </td>
-        <td class="col-3">
-          <input required type="text" name="niveau" formControlName="niveau">
-        </td>
-      </tr>
+    <tr class="row">
+      <td class="col-3">
+        <label class="required">Rue </label>
+      </td>
+      <td class="col-3">
+        <input required type="text" name="rue" formControlName="rue"></td>
+    </tr>
 
-      <thead>
-      <th class="row">
-        <div class="col-6" style="background-color: #3050F0">
-          <label class="text-white">Spécialité</label>
-        </div>
-      </th>
-      </thead>
+    <tr class="row">
+      <td class="col-3">
+        <label class="required">Code postal </label>
+      </td>
+      <td class="col-3">
+        <input required type="text" name="codePostal" formControlName="codePostal">
+      </td>
+    </tr>
 
-      <tr class="row">
-        <td class="col-3">
-          <label class="required">Specialite </label>
-        </td>
-        <td class="col-3">
-          <select multiple formControlName="spec" required>
-            <option [ngValue]="null" disabled>Choisissez la specialite</option>
-            <option *ngFor="let spe of this.specialites" [ngValue]="spe.numSpec">
-              {{ spe.libelle }}
-            </option>
-          </select>
-        </td>
-      </tr>
-    </div>
+    <tr class="row">
+      <td class="col-3">
+        <label class="required">Ville </label>
+      </td>
+      <td class="col-3">
+        <input required type="text" name="ville" formControlName="ville">
+
+      </td>
+    </tr>
+
+    <tr class="row">
+      <td class="col-3">
+        <label class="required">Téléphone </label>
+      </td>
+      <td class="col-3">
+        <input required type="tel" name="tel" formControlName="tel">
+      </td>
+    </tr>
+
+    <tr class="row">
+      <td class="col-3">
+        <label>Fax </label>
+      </td>
+      <td class="col-3">
+        <input type="text" name="fax" formControlName="fax">
+      </td>
+    </tr>
+
+    <tr class="row">
+      <td class="col-3">
+        <label>Email </label>
+      </td>
+      <td class="col-3">
+        <input type="email" name="mail" formControlName="mail">
+      </td>
+    </tr>
+
+    <thead>
+    <th class="row">
+      <div class="col-6" style="background-color: #3050F0">
+        <label class="text-white">Divers</label>
+      </div>
+    </th>
+    </thead>
+
+
+    <tr class="row">
+      <td class="col-3">
+        <label>Observation </label>
+      </td>
+      <td class="col-3">
+        <textarea name="obs" formControlName="obs"></textarea>
+      </td>
+    </tr>
+
+    <tr class="row">
+      <td class="col-3">
+        <label>Url de site </label>
+      </td>
+      <td class="col-3">
+        <input type="url" name="url" formControlName="url">
+      </td>
+    </tr>
+
+    <tr class="row">
+      <td class="col-3">
+        <label class="required">Niveau </label>
+      </td>
+      <td class="col-3">
+        <input required type="text" name="niveau" formControlName="niveau">
+      </td>
+    </tr>
+
+    <thead>
+    <th class="row">
+      <div class="col-6" style="background-color: #3050F0">
+        <label class="text-white">Spécialité</label>
+      </div>
+    </th>
+    </thead>
+
+    <tr class="row">
+      <td class="col-3">
+        <label class="required">Specialite </label>
+      </td>
+      <td class="col-3">
+        <select multiple formControlName="spec" required>
+          <option [ngValue]="null" disabled>Choisissez la specialite</option>
+          <option *ngFor="let spe of this.specialites" [ngValue]="spe.numSpec">
+            {{ spe.libelle }}
+          </option>
+        </select>
+      </td>
+    </tr>
   </div>
 
   <input type="submit" value="Créer le stage" *ngIf="!isUpdate">

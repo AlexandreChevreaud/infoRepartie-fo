@@ -86,7 +86,6 @@ export class EntrepriseCreationComponent implements OnInit {
     }
   }
 
-  //TODO faire le truc des specs
 
   onSubmit() {
     if (this.loginForm.valid) {

@@ -8,7 +8,7 @@ import {Services} from "./Services";
   providedIn: 'root'
 })
 export class ClasseService extends Services {
-  url = "http://localhost:8080/class";
+  url = "http://localhost:8080/classe";
   SLASH = "/";
 
   constructor(private http: HttpClient) {

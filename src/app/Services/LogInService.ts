@@ -1,11 +1,12 @@
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {catchError, Observable, throwError} from "rxjs";
 import {Injectable} from '@angular/core';
+import {Services} from "./Services";
 
 @Injectable({
   providedIn: 'root',
 })
-export class LogInService {
+export class LogInService extends Services {
 
   login = "";
   isConnected = true;
@@ -16,13 +17,34 @@ export class LogInService {
   SLASH = "/";
 
   constructor(private http: HttpClient,) {
+    super();
   }
 
   isEtudiantExistant(login: string, mdp: string): Observable<boolean> {
-    return this.http.get<boolean>(this.urlEtudiant + "/existant" + this.SLASH + login + this.SLASH + mdp);
+    return this.http.get<boolean>(this.urlEtudiant + "/existant" + this.SLASH + login + this.SLASH + mdp).pipe(
+      catchError(error => {
+        let errorMsg: string;
+        if (error.error instanceof ErrorEvent) {
+          errorMsg = `Error: ${error.error.message}`;
+        } else {
+          errorMsg = this.getServerErrorMessage(error);
+        }
+
+        return throwError(errorMsg);
+      }));
   }
 
   isProfesseurExistant(login: string, mdp: string): Observable<boolean> {
-    return this.http.get<boolean>(this.urlProf + "/existant" + this.SLASH + login + this.SLASH + mdp);
+    return this.http.get<boolean>(this.urlProf + "/existant" + this.SLASH + login + this.SLASH + mdp).pipe(
+      catchError(error => {
+        let errorMsg: string;
+        if (error.error instanceof ErrorEvent) {
+          errorMsg = `Error: ${error.error.message}`;
+        } else {
+          errorMsg = this.getServerErrorMessage(error);
+        }
+
+        return throwError(errorMsg);
+      }));
   }
 }

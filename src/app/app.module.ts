@@ -16,6 +16,7 @@ import { VueEntrepriseComponent } from './Component/entreprise/vue-entreprise/vu
 import { EntrepriseCreationComponent } from './Component/entreprise/entreprise-creation/entreprise-creation.component';
 import { DetailsEntepriseComponent } from './Component/entreprise/details-enteprise/details-enteprise.component';
 import { ListEtudiantComponent } from './Component/stagiaire/list-etudiant/list-etudiant.component';
+import { DetailsEtudiantComponent } from './Component/stagiaire/details-etudiant/details-etudiant.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ListEtudiantComponent } from './Component/stagiaire/list-etudiant/list-
     EntrepriseCreationComponent,
     DetailsEntepriseComponent,
     ListEtudiantComponent,
+    DetailsEtudiantComponent,
 
   ],
   imports: [

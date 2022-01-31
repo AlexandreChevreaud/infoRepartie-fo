@@ -55,8 +55,6 @@ export class ListEtudiantComponent implements OnInit {
       this.profs = value;
     }));
     this.displayNameSelect = [];
-    // this.displayNameSelect = this.updateDisplay();
-
   }
 
   getEntrepriseNameFromStage(etuId: any) {
@@ -73,90 +71,26 @@ export class ListEtudiantComponent implements OnInit {
     return this.profs.find(x => numProf == x.numProf)?.nomProf ?? ""
   }
 
-  // findSpecialiteNumber(numEntreprise: number | undefined): Array<SpecEntreprise> {
-  //   var num = <number>numEntreprise;
-  //   var a = this.specEntreprises.filter(x => x.numEntreprise == num);
-  //   return a;
-  // }
-  //
-  // findSpecialite(specs: Array<SpecEntreprise>): string {
-  //   var s = "";
-  //   specs.forEach((value => {
-  //     console.log(value);
-  //     s += this.specialites.find(x => x.numSpec == value.numSpec)?.libelle ?? "";
-  //     s += " ";
-  //   }));
-  //   return s;
-  // }
-
-  // getSpecialite(numEntreprise: number | undefined): string {
-  //   // console.log(numEntreprise);
-  //   var a = this.findSpecialiteNumber(numEntreprise);
-  //   // console.log(a);
-  //   var b = this.findSpecialite(a);
-  //   // console.log(b);
-  //   return b;
-  // }
-
-
   createEntreprise() {
     this.router.navigate(['creationentreprise']);
   }
 
   redirectToDetailsEtudiant(etu: Etudiant) {
     // this.router.navigate(['detailsentreprise'], {queryParams: {numEntreprise: ent.numEntreprise}});
-    //TODO update etudiants
 
   }
 
-  // supprimerEntreprise(ent: number | undefined) {
-  //   let id = <number>ent;
-  //   this.entrepriseService.deleteEntreprise(id).subscribe(value => {
-  //     var idx = this.entreprises.map(e => e.numEntreprise).indexOf(value);
-  //     if (idx > -1) {
-  //       this.entreprises.splice(idx, 1);
-  //     }
-  //   })
-  // }
-
-  redirectToInscription() {
-    this.router.navigate(['inscription']);
-
-  }
-
-  //
-  // updateEnteprise(ent: Entreprise) {
-  //   this.router.navigate(['creationentreprise'], {queryParams: {numEntreprise: ent.numEntreprise}});
-  // }
-
-  // changeDisplayColumn(name: string) {
-  //   this.displayColumn[name] = !this.displayColumn[name];
-  //   this.displayNameSelect = this.updateDisplay();
-  //   this.name = this.displayNameSelect[0];
-  // }
 
   selectChange($event: any) {
     this.name = $event.target.value;
   }
 
-  // updateDisplay(): string[] {
-  //   let tab: string[] = [];
-  //   var list = (Object.keys(this.displayColumn) as Array<string>);
-  //
-  //   list.forEach((value => {
-  //     if (!this.displayColumn[value]) {
-  //       tab.push(value);
-  //     }
-  //   }));
-  //   return tab;
-  // }
-
   recherche(event: Event) {
-    this.etudiantRecherche = []
+    this.etudiantRecherche = [];
     let recherche = (event.target as HTMLInputElement).value;
     this.etudiant.forEach(value => {
       if (value.nomEtudiant.toLowerCase().startsWith(recherche.toLowerCase(), 0)) {
-        this.etudiantRecherche.push(value)
+        this.etudiantRecherche.push(value);
       }
     });
   }
@@ -164,10 +98,7 @@ export class ListEtudiantComponent implements OnInit {
   deleteEtudiant(ent: any) {
     let id = <number>ent;
     this.etudiantService.deleteEtudiant(id).subscribe(value => {
-      console.log(value);
       var idx = this.etudiant.map(e => e.numEtudiant).indexOf(value);
-      console.log(idx);
-
       if (idx > -1) {
         this.etudiant.splice(idx, 1);
       }
@@ -175,6 +106,11 @@ export class ListEtudiantComponent implements OnInit {
   }
 
   updateEtudiant(etu: Etudiant) {
+
+  }
+
+  detailsEtudiants(etu: Etudiant) {
+    this.router.navigate(['detailsetudiants'], {queryParams: {numEtudiant: etu.numEtudiant}});
 
   }
 }

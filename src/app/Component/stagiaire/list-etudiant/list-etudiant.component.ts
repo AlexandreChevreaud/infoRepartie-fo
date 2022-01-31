@@ -161,8 +161,17 @@ export class ListEtudiantComponent implements OnInit {
     });
   }
 
-  deleteEtudiant(numEntreprise: any) {
+  deleteEtudiant(ent: any) {
+    let id = <number>ent;
+    this.etudiantService.deleteEtudiant(id).subscribe(value => {
+      console.log(value);
+      var idx = this.etudiant.map(e => e.numEtudiant).indexOf(value);
+      console.log(idx);
 
+      if (idx > -1) {
+        this.etudiant.splice(idx, 1);
+      }
+    })
   }
 
   updateEtudiant(etu: Etudiant) {

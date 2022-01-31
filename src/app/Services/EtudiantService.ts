@@ -43,4 +43,18 @@ export class EtudiantService extends Services {
         return throwError(errorMsg);
       }));
   }
+
+  deleteEtudiant(id: number) {
+    return this.http.delete<number>(this.url + this.SLASH + id).pipe(
+      catchError(error => {
+        let errorMsg: string;
+        if (error.error instanceof ErrorEvent) {
+          errorMsg = `Error: ${error.error.message}`;
+        } else {
+          errorMsg = this.getServerErrorMessage(error);
+        }
+
+        return throwError(errorMsg);
+      }));
+  }
 }

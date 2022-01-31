@@ -9,6 +9,7 @@ import {InscriptionComponent} from "./Component/inscription/inscription.componen
 import {EntrepriseCreationComponent} from "./Component/entreprise/entreprise-creation/entreprise-creation.component";
 import {VueEntrepriseComponent} from "./Component/entreprise/vue-entreprise/vue-entreprise.component";
 import {DetailsEntepriseComponent} from "./Component/entreprise/details-enteprise/details-enteprise.component";
+import {ListEtudiantComponent} from "./Component/stagiaire/list-etudiant/list-etudiant.component";
 
 const routes: Routes = [
   {path: 'accueil', component: accueilComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'creationentreprise', component: EntrepriseCreationComponent},
   {path: 'vue', component: VueEntrepriseComponent},
   {path: 'detailsentreprise', component: DetailsEntepriseComponent},
+  {path: 'listEtudiants', component: ListEtudiantComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
 
 ];

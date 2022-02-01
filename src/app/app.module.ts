@@ -15,6 +15,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { VueEntrepriseComponent } from './Component/entreprise/vue-entreprise/vue-entreprise.component';
 import { EntrepriseCreationComponent } from './Component/entreprise/entreprise-creation/entreprise-creation.component';
 import { DetailsEntepriseComponent } from './Component/entreprise/details-enteprise/details-enteprise.component';
+import { ListEtudiantComponent } from './Component/stagiaire/list-etudiant/list-etudiant.component';
+import { DetailsEtudiantComponent } from './Component/stagiaire/details-etudiant/details-etudiant.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { DetailsEntepriseComponent } from './Component/entreprise/details-entepr
     VueEntrepriseComponent,
     EntrepriseCreationComponent,
     DetailsEntepriseComponent,
+    ListEtudiantComponent,
+    DetailsEtudiantComponent,
 
   ],
   imports: [

@@ -56,4 +56,19 @@ export class StageService extends Services {
         return throwError(errorMsg);
       }));
   }
+
+  getAllStages(): Observable<Array<Stage>> {
+    return this.http.get<Array<Stage>>(this.url + this.SLASH + "all").pipe(
+      catchError(error => {
+        let errorMsg: string;
+        if (error.error instanceof ErrorEvent) {
+          errorMsg = `Error: ${error.error.message}`;
+        } else {
+          errorMsg = this.getServerErrorMessage(error);
+        }
+
+        return throwError(errorMsg);
+      }));
+
+  }
 }

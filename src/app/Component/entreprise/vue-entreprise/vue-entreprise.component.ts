@@ -53,6 +53,7 @@ export class VueEntrepriseComponent implements OnInit {
 
     this.entrepriseService.getAllEntreprises().subscribe((value => {
       this.entreprises = value;
+      this.entreprises = value;
       this.entreprisesRecherche = value;
     }));
     this.specEntrepriseService.getAllSpecEnterprise().subscribe((value => {
@@ -98,7 +99,6 @@ export class VueEntrepriseComponent implements OnInit {
   }
 
   redirectToDetailsEntreprise(ent: Entreprise) {
-    console.log(ent.numEntreprise);
     this.router.navigate(['detailsentreprise'], {queryParams: {numEntreprise: ent.numEntreprise}});
 
   }

@@ -59,7 +59,6 @@ export class NavigationComponent implements OnInit {
   }
 
   deconnexion() {
-    console.log("test")
     this.logInService.isConnected = false;
     this.logInService.isProfesseur = false;
     this.logInService.login = "";

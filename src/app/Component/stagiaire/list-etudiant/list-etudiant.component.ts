@@ -71,13 +71,8 @@ export class ListEtudiantComponent implements OnInit {
     return this.profs.find(x => numProf == x.numProf)?.nomProf ?? ""
   }
 
-  createEntreprise() {
-    this.router.navigate(['creationentreprise']);
-  }
-
-  redirectToDetailsEtudiant(etu: Etudiant) {
-    // this.router.navigate(['detailsentreprise'], {queryParams: {numEntreprise: ent.numEntreprise}});
-
+  createEtudiant() {
+    this.router.navigate(['stagiaire']);
   }
 
 
@@ -110,7 +105,7 @@ export class ListEtudiantComponent implements OnInit {
   }
 
   detailsEtudiants(etu: Etudiant) {
-    this.router.navigate(['detailsetudiants'], {queryParams: {numEtudiant: etu.numEtudiant}});
+    this.router.navigate(['detailsetudiant'], {queryParams: {numEtudiant: etu.numEtudiant}});
 
   }
 }

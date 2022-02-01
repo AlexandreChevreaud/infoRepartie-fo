@@ -75,7 +75,6 @@ export class ListEtudiantComponent implements OnInit {
     this.router.navigate(['stagiaire']);
   }
 
-
   selectChange($event: any) {
     this.name = $event.target.value;
   }
